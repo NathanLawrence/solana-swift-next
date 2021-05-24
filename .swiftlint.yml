@@ -1,0 +1,9 @@
+type_name:
+  min_length: 3
+  max_length:
+    warning: 40
+    error: 50
+  excluded: iPhone # excluded via string
+identifier_name:
+  min_length: 
+    error: 2 # Please no `x` variable names.

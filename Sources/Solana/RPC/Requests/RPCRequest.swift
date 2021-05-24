@@ -11,7 +11,6 @@ public protocol RPCRequest: Hashable {
     associatedtype Response
 }
 
-
 struct RPCRequestPayload<RequestMetadata: Codable, Value: Codable>: Encodable {
     let value: Value
 

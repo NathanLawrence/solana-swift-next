@@ -1,4 +1,4 @@
-    import XCTest
+import XCTest
     import Regex
     @testable import Solana
 

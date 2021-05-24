@@ -4,5 +4,3 @@ struct Solana {
     var text = "Hello, World!"
 
 }
-
-
