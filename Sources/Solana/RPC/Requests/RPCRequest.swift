@@ -40,7 +40,7 @@ public struct RPCRequest<Request: RPCRequestable>: Encodable {
     public func encode(to encoder: Encoder) throws {
         var fieldset = encoder.container(keyedBy: String.self)
         try fieldset.encode(rpcSpecficationVersion, forKey: "jsonrpc")
-        try fieldset.encode(request.payload, forKey: "value")
+        try fieldset.encode(request.payload, forKey: "params")
         try fieldset.encode(id, forKey: "id")
     }
 }
