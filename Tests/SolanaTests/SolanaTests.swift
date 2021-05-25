@@ -1,7 +1,6 @@
 import XCTest
-    import Regex
-    @testable import Solana
+@testable import Solana
 
-    final class SolanaTests: XCTestCase {
-        func testExample() {}
-    }
+final class SolanaTests: XCTestCase {
+    func testExample() {}
+}
