@@ -7,10 +7,13 @@
 
 import Foundation
 
+/**
+ A node on the Solana network, addressable via JSON-RPC calls.
+ */
 public struct RPCNode {
     public init(url: URL) {
         self.url = url
     }
 
-    let url: URL
+    public let url: URL
 }
