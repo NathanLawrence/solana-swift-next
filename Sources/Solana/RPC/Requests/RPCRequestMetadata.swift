@@ -7,9 +7,7 @@
 
 import Foundation
 
-public protocol RPCRequestMetadata: Encodable {
-    
-}
+public protocol RPCRequestMetadata: Encodable { }
 
 public struct NoRequestMetadata: RPCRequestMetadata {
     public func encode(to encoder: Encoder) throws {
