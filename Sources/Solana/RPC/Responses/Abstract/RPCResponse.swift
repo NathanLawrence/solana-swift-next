@@ -7,7 +7,6 @@
 
 import Foundation
 
-@dynamicMemberLookup
 public struct RPCResponse<Result: RPCResponseContent>: Codable {
 
     /**
@@ -23,7 +22,7 @@ public struct RPCResponse<Result: RPCResponseContent>: Codable {
     /**
      The version of the JSON-RPC spec.
      */
-    let rpcSpecficationVersion: String
+    let rpcSpecificationVersion: String
 
     subscript<T>(dynamicMember dynamicMember: KeyPath<Result, T>) -> T {
         return result[keyPath: dynamicMember]
@@ -33,6 +32,6 @@ public struct RPCResponse<Result: RPCResponseContent>: Codable {
         case result
         case id
 
-        case rpcSpecficationVersion = "jsonrpc"
+        case rpcSpecificationVersion = "jsonrpc"
     }
 }
