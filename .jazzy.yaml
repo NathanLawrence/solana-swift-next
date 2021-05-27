@@ -1,0 +1,31 @@
+module: Solana
+
+theme: fullwidth
+
+custom_categories:
+  - name: General Types
+    children:
+    - Byte
+    - Base58
+    - RPC
+  - name: Making RPC Requests
+    children:
+    - RPCSession
+    - RPCNode
+    - RPCRequest
+    - TaggedRPCRequest
+    - RPCRequestAdaptor
+  - name: JSON-RPC Requests
+    children:
+    - RPCRequestKeyedBody
+    - RPCRequestPayload
+  - name: JSON-RPC Responses
+    children:
+    - RPCResponse
+    - RPCResponseContent
+  - name: Writing New Request/Response Code
+    children:
+    - NoKeyedBody
+  - name: System Extensions
+    children:
+    - String

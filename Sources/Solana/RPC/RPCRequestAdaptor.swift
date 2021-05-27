@@ -14,15 +14,15 @@ import Combine
  Conform to this protocol and set up an `RPCSession` object with your conforming object to create a custom testing or mock system. For normal use, `RPCNetworkRequestAdaptor` comes pre-configured, and `RPCPassthroughRequestAdaptor` can handle sending flat files from disk.
  */
 public protocol RPCRequestAdaptor {
-    func publish<Request: RPCRequestable>(_ unwrappedRequest: Request) -> AnyPublisher<RPCResponse<Request.Response>, Error>
+    func publish<Request: RPCRequest>(_ unwrappedRequest: Request) -> AnyPublisher<RPCResponse<Request.Response>, Error>
 
-    func publish<Request: RPCRequestable>(_ request: RPCRequest<Request>) -> AnyPublisher<RPCResponse<Request.Response>, Error>
+    func publish<Request: RPCRequest>(_ request: TaggedRPCRequest<Request>) -> AnyPublisher<RPCResponse<Request.Response>, Error>
 }
 
 
 extension RPCRequestAdaptor {
-    func publish<Request: RPCRequestable>(_ unwrappedRequest: Request) -> AnyPublisher<RPCResponse<Request.Response>, Error> {
-        let wrapped = RPCRequest(request: unwrappedRequest)
+    func publish<Request: RPCRequest>(_ unwrappedRequest: Request) -> AnyPublisher<RPCResponse<Request.Response>, Error> {
+        let wrapped = TaggedRPCRequest(unwrappedRequest)
         return publish(wrapped)
     }
 }

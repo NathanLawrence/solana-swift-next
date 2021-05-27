@@ -10,56 +10,29 @@ import Foundation
 /**
  The protocol Solana JSON-RPC requests must confrom to.
  */
-public protocol RPCRequestable: Hashable {
+public protocol RPCRequest: Hashable {
+    /**
+     The kind of response this request should receive back from a node after being made.
+     */
     associatedtype Response
-    associatedtype Metadata: RPCRequestMetadata
+
+    /**
+     The single-field-encoded value that forms the first part of this request's `RPCRequestPayload`.
+     */
     associatedtype Value: Codable
 
-    var payload: RPCRequestPayload<Value, Metadata> { get }
+    /**
+     The key-value paired information necessary to perform a given the request. This is encoded alongside the basic value to create an `RPCRequestPayload` that reflects the information necessary to perform the request.
+     */
+    associatedtype KeyedBody: RPCRequestKeyedBody
 
+    /**
+     The `RPCRequestPayload` generated and sent to the server as `values` in your final tagged request. This contains both the basic single-field value provided and any key-value paired body information.
+     */
+    var payload: RPCRequestPayload<Value, KeyedBody> { get }
+
+    /**
+     The single-field-encoded value that forms the first part of this request's `RPCRequestPayload`.
+     */
     var value: Value { get }
-}
-
-public struct RPCRequest<Request: RPCRequestable>: Encodable {
-
-    /**
-     The version of the JSON-RPC spec.
-     */
-    let rpcSpecficationVersion: String = "2.0"
-
-    /**
-     The request identifier shared with the server.
-     */
-    var id: Int = UUID().hashValue
-
-    /**
-     The request that will be sent to the server.
-     */
-    let request: Request
-
-    public func encode(to encoder: Encoder) throws {
-        var fieldset = encoder.container(keyedBy: String.self)
-        try fieldset.encode(rpcSpecficationVersion, forKey: "jsonrpc")
-        try fieldset.encode(request.payload, forKey: "params")
-        try fieldset.encode(id, forKey: "id")
-    }
-}
-
-
-extension String: CodingKey {
-    public init?(intValue: Int) {
-        nil
-    }
-
-    public init?(stringValue: String) {
-        self.init(stringValue)
-    }
-
-    public var stringValue: String {
-        self
-    }
-
-    public var intValue: Int? {
-        nil
-    }
 }

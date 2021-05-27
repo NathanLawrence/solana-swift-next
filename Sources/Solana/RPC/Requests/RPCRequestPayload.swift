@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct RPCRequestPayload<Value: Encodable, RequestMetadata: RPCRequestMetadata>: Encodable {
+public struct RPCRequestPayload<Value: Encodable, RequestMetadata: RPCRequestKeyedBody>: Encodable {
     let value: Value
     let requestMetadata: RequestMetadata
 
@@ -16,7 +16,7 @@ public struct RPCRequestPayload<Value: Encodable, RequestMetadata: RPCRequestMet
         try container.encode(value)
 
         // Only encode request metadata if the request has some.
-        if !(requestMetadata is NoRequestMetadata) {
+        if !(requestMetadata is NoKeyedBody) {
             try container.encode(requestMetadata)
         }
 
