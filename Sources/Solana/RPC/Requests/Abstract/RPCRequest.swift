@@ -27,7 +27,7 @@ public protocol RPCRequest: Hashable {
     associatedtype KeyedBody: RPCRequestKeyedBody
 
     /**
-     The `RPCRequestPayload` generated and sent to the server as `values` in your final tagged request. This contains both the basic single-field value provided and any key-value paired body information.
+     The `RPCRequestPayload` generated and sent to the server as `params` in your final tagged request. This contains both the basic single-field value provided and any key-value paired body information.
      */
     var payload: RPCRequestPayload<Value, KeyedBody> { get }
 
