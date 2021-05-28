@@ -22,7 +22,13 @@ custom_categories:
   - name: JSON-RPC Responses
     children:
     - RPCResponse
-    - RPCResponseContent
+    - RPCResponseAndContext
+    - RPCResponseContext
+    - TaggedRPCResponse
+    - NodeHealthResponse
+    - GetInflationRewardResult
+    - GetLargestAccountsResult
+    - LamportBalanceStatement
   - name: Writing New Request/Response Code
     children:
     - NoKeyedBody

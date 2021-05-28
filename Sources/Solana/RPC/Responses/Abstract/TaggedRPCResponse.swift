@@ -7,6 +7,9 @@
 
 import Foundation
 
+/**
+ A JSON-RPC response, indicating either success or failure, wrapped in an identifier and specification version.
+ */
 public struct TaggedRPCResponse<Success: Codable, Failure: Error> {
     /**
      The result of the RPC call, if it succeeded.
