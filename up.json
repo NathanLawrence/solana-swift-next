@@ -1,0 +1,7 @@
+{
+"name": "solana-swift-docs",
+"type": "static",
+"static": {
+"dir": "docs"
+}
+}
