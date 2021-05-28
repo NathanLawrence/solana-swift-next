@@ -1,0 +1,10 @@
+name: Solana Swift Actions
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Publish Jazzy Docs
+        uses: Steven0351/publish-jazzy-docs@v1.1.2
+
