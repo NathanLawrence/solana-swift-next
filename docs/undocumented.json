@@ -1,0 +1,96 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/General/Base58.swift",
+      "line": 28,
+      "symbol": "Base58.init(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/RPC/RPCNode.swift",
+      "line": 14,
+      "symbol": "RPCNode.init(url:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/RPC/RPCNode.swift",
+      "line": 18,
+      "symbol": "RPCNode.url",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/RPC/RPCRequestAdaptor.swift",
+      "line": 17,
+      "symbol": "RPCRequestAdaptor.publish(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/RPC/RPCRequestAdaptor.swift",
+      "line": 19,
+      "symbol": "RPCRequestAdaptor.publish(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/RPC/RPCSession.swift",
+      "line": 10,
+      "symbol": "RPCSession",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/RPC/Requests/Abstract/RPCRequestPayload.swift",
+      "line": 10,
+      "symbol": "RPCRequestPayload",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/RPC/Requests/Abstract/TaggedRPCRequest.swift",
+      "line": 40,
+      "symbol": "TaggedRPCRequest.init(_:id:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/RPC/Responses/Abstract/RPCResponse.swift",
+      "line": 10,
+      "symbol": "RPCResponse",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/RPC/Responses/Results/GetAccountInfoResult.swift",
+      "line": 10,
+      "symbol": "GetAccountInfoResult",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/RPC/Responses/Results/GetLargestAccountsResult.swift",
+      "line": 25,
+      "symbol": "GetLargestAccountsResult",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/RPC/Responses/Results/GetMultipleAccountInfoResult.swift",
+      "line": 10,
+      "symbol": "GetMultipleAccountInfoResult",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/RPC/Responses/Results/GetMultipleAccountInfoResult.swift",
+      "line": 12,
+      "symbol": "GetProgramAccountsResult",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/nathanlawrence/Developer/solana-swift"
+}

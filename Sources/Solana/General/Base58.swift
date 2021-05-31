@@ -29,6 +29,9 @@ public struct Base58: Codable {
         self.dataBytes = dataBytes
     }
 
+    /**
+     Build a chunk of data from its string representation. If this string representation does not conform to Base 58, the initializer will fail.
+     */
     public init?(string: String) {
         guard let bytes = Base58Tools.base58Decode(string) else {
             return nil
@@ -36,6 +39,9 @@ public struct Base58: Codable {
         self.init(bytes)
     }
 
+    /**
+     The base58 string representation of the data.
+     */
     public var stringValue: String {
         Base58Tools.base58Encode(dataBytes)
     }
