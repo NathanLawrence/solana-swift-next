@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct RPCRequestPayload<Value: Encodable, RequestMetadata: RPCRequestKeyedBody>: Encodable {
+public struct RPCRequestPayload<Value: Encodable & Hashable, RequestMetadata: RPCRequestKeyedBody>: Encodable, Hashable {
     let value: Value
     let requestMetadata: RequestMetadata
 

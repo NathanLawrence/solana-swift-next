@@ -19,7 +19,7 @@ public protocol RPCRequest: Hashable {
     /**
      The single-field-encoded value that forms the first part of this request's `RPCRequestPayload`.
      */
-    associatedtype Value: Codable
+    associatedtype Value: Codable & Hashable
 
     /**
      The key-value paired information necessary to perform a given the request. This is encoded alongside the basic value to create an `RPCRequestPayload` that reflects the information necessary to perform the request.
