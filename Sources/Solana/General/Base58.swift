@@ -12,7 +12,7 @@ import BigInt
 /**
  Data represented as a Base58-encoded string.
  */
-public struct Base58: Codable {
+public struct Base58: Codable, Hashable {
     /**
      The underlying data the Base58 structure represents.
      */
@@ -59,6 +59,10 @@ public struct Base58: Codable {
         }
         self.init(bytes)
     }
+
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(data)
+    }
 }
 
 /**
@@ -68,14 +72,14 @@ internal enum Base58Tools {
     /// Length of checksum appended to Base58Check encoded strings.
     private static let checksumLength = 4
 
-    private static let alphabet = [UInt8]("123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz".utf8)
+    private static let alphabet = [Byte]("123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz".utf8)
     private static let zero = BigUInt(0)
     private static let radix = BigUInt(alphabet.count)
 
     /// Encode the given bytes into a Base58Check encoded string.
     /// - Parameter bytes: The bytes to encode.
     /// - Returns: A base58check encoded string representing the given bytes, or nil if encoding failed.
-    public static func base58CheckEncode(_ bytes: [UInt8]) -> String {
+    public static func base58CheckEncode(_ bytes: [Byte]) -> String {
         let checksum = calculateChecksum(bytes)
         let checksummedBytes = bytes + checksum
         return Base58Tools.base58Encode(checksummedBytes)
@@ -84,14 +88,14 @@ internal enum Base58Tools {
     /// Decode the given Base58Check encoded string to bytes.
     /// - Parameter input: A base58check encoded input string to decode.
     /// - Returns: Bytes representing the decoded input, or nil if decoding failed.
-    public static func base58CheckDecode(_ input: String) -> [UInt8]? {
+    public static func base58CheckDecode(_ input: String) -> [Byte]? {
         guard let decodedChecksummedBytes = base58Decode(input) else {
             return nil
         }
 
         let decodedChecksum = decodedChecksummedBytes.suffix(checksumLength)
         let decodedBytes = decodedChecksummedBytes.prefix(upTo: decodedChecksummedBytes.count - checksumLength)
-        let calculatedChecksum = calculateChecksum([UInt8](decodedBytes))
+        let calculatedChecksum = calculateChecksum([Byte](decodedBytes))
 
         guard decodedChecksum.elementsEqual(calculatedChecksum, by: { $0 == $1 }) else {
             return nil
@@ -102,8 +106,8 @@ internal enum Base58Tools {
     /// Encode the given bytes to a Base58 encoded string.
     /// - Parameter bytes: The bytes to encode.
     /// - Returns: A base58 encoded string representing the given bytes, or nil if encoding failed.
-    public static func base58Encode(_ bytes: [UInt8]) -> String {
-        var answer: [UInt8] = []
+    public static func base58Encode(_ bytes: [Byte]) -> String {
+        var answer: [Byte] = []
         var integerBytes = BigUInt(Data(bytes))
 
         while integerBytes > 0 {
@@ -124,10 +128,10 @@ internal enum Base58Tools {
     /// Decode the given base58 encoded string to bytes.
     /// - Parameter input: The base58 encoded input string to decode.
     /// - Returns: Bytes representing the decoded input, or nil if decoding failed.
-    public static func base58Decode(_ input: String) -> [UInt8]? {
+    public static func base58Decode(_ input: String) -> [Byte]? {
         var answer = zero
         var i = BigUInt(1)
-        let byteString = [UInt8](input.utf8)
+        let byteString = [Byte](input.utf8)
 
         for char in byteString.reversed() {
             guard let alphabetIndex = alphabet.firstIndex(of: char) else {
@@ -140,14 +144,14 @@ internal enum Base58Tools {
         let bytes = answer.serialize()
         // For every leading one on the input we need to add a leading 0 on the output
         let leadingOnes = byteString.prefix(while: { value in value == alphabet[0]})
-        let leadingZeros: [UInt8] = Array(repeating: 0, count: leadingOnes.count)
+        let leadingZeros: [Byte] = Array(repeating: 0, count: leadingOnes.count)
         return leadingZeros + bytes
     }
 
     /// Calculate a checksum for a given input by hashing twice and then taking the first four bytes.
     /// - Parameter input: The input bytes.
     /// - Returns: A byte array representing the checksum of the input bytes.
-    private static func calculateChecksum(_ input: [UInt8]) -> [UInt8] {
+    private static func calculateChecksum(_ input: [Byte]) -> [Byte] {
         let hashedData = sha256(input)
         let doubleHashedData = sha256(hashedData)
         let doubleHashedArray = Array(doubleHashedData)
@@ -157,13 +161,13 @@ internal enum Base58Tools {
     /// Create a sha256 hash of the given data.
     /// - Parameter data: Input data to hash.
     /// - Returns: A sha256 hash of the input data.
-    private static func sha256(_ data: [UInt8]) -> [UInt8] {
+    private static func sha256(_ data: [Byte]) -> [Byte] {
         let res = NSMutableData(length: Int(CC_SHA256_DIGEST_LENGTH))!
         CC_SHA256(
             (Data(data) as NSData).bytes,
             CC_LONG(data.count),
-            res.mutableBytes.assumingMemoryBound(to: UInt8.self)
+            res.mutableBytes.assumingMemoryBound(to: Byte.self)
         )
-        return [UInt8](res as Data)
+        return [Byte](res as Data)
     }
 }

@@ -10,7 +10,7 @@ import Foundation
 /**
  The key-value paired information necessary to perform a given JSON-RPC request. This is encoded alongside the basic value to create an `RPCRequestPayload` that reflects the information necessary to perform the request.
  */
-public protocol RPCRequestKeyedBody: Encodable { }
+public protocol RPCRequestKeyedBody: Encodable, Hashable { }
 
 /**
  A structure to use to indicate that there is no key-value paired information that should accompany a JSON-RPC request.
