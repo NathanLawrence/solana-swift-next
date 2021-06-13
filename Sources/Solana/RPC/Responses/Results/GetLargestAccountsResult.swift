@@ -23,3 +23,5 @@ public struct LamportBalanceStatement: Codable {
 }
 
 public typealias GetLargestAccountsResult = [LamportBalanceStatement]
+
+extension GetLargestAccountsResult: RPCResponse { }

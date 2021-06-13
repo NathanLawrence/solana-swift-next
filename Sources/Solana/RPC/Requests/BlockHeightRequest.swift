@@ -18,7 +18,7 @@ public struct BlockHeightRequest: RPCRequest {
         "getBlockHeight"
     }
 
-    public typealias Response = TaggedRPCResponse<Int64, SolanaNodeError>
+    public typealias Response = Int64
     public typealias Value = NoRPCRequestValue
     public typealias KeyedBody = NoKeyedBody
 }

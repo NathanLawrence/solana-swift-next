@@ -13,10 +13,10 @@ public class RPCNetworkRequestAdaptor: RPCRequestAdaptor {
         self.task = task
         self.nodeURL = nodeURL
     }
-
+    
     var task: URLSessionDataTask? = nil
-
-    public func publish<Request>(_ request: TaggedRPCRequest<Request>) -> AnyPublisher<Request.Response, Error> where Request : RPCRequest {
+    
+    public func publish<Request>(_ request: TaggedRPCRequest<Request>) -> AnyPublisher<TaggedRPCResponse<Request.Response, SolanaNodeError>, Error> where Request : RPCRequest {
         Just(request)
             .encode(encoder: RPC.requestEncoder)
             .mapError { RPCNetworkRequestError.requestEncodingError($0) }
@@ -39,14 +39,15 @@ public class RPCNetworkRequestAdaptor: RPCRequestAdaptor {
             }
             .flatMap { data in
                 Just(data)
-                    .decode(type: Request.Response.self, decoder: RPC.responseDecoder)
+                    .decode(type: TaggedRPCResponse<Request.Response, SolanaNodeError>.self,
+                            decoder: RPC.responseDecoder)
                     .mapError { RPCNetworkRequestError.responseDecodingError($0) }
             }
             .eraseToAnyPublisher()
     }
-
-
-
+    
+    
+    
     let nodeURL: URL
     let urlSession = URLSession(configuration: .default)
 }
