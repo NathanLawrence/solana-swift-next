@@ -13,4 +13,6 @@ public struct LargestAccountsRequest: RPCRequest {
     public typealias Response = RPCResponseAndContext<GetLargestAccountsResult>
     public typealias Value = NoRPCRequestValue
     public typealias KeyedBody = NoKeyedBody
+
+    public init() {}
 }
