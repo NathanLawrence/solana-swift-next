@@ -10,11 +10,11 @@ import Foundation
 /**
  The protocol Solana JSON-RPC requests must confrom to.
  */
-public protocol RPCRequest: Hashable {
+public protocol RPCRequest {
     /**
      The kind of response this request should receive back from a node after being made.
      */
-    associatedtype Response
+    associatedtype Response: Decodable
 
     /**
      The single-field-encoded value that forms the first part of this request's `RPCRequestPayload`.
@@ -32,7 +32,16 @@ public protocol RPCRequest: Hashable {
     var payload: RPCRequestPayload<Value, KeyedBody> { get }
 
     /**
-     The single-field-encoded value that forms the first part of this request's `RPCRequestPayload`.
+     The string name of the method which will be queried.
      */
-    var value: Value { get }
+    static var methodName: String { get }
+}
+
+public extension RPCRequest where Value == NoRPCRequestValue, KeyedBody == NoKeyedBody {
+    var payload: RPCRequestPayload<Value, KeyedBody> {
+        RPCRequestPayload(value: NoRPCRequestValue(), requestMetadata: NoKeyedBody())
+    }
+}
+
+public struct SolanaNodeError: Error, Codable {
 }

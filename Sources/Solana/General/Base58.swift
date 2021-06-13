@@ -46,7 +46,7 @@ public struct Base58: Codable {
     }
 
     public init(from decoder: Decoder) throws {
-        var field = try decoder.singleValueContainer()
+        let field = try decoder.singleValueContainer()
         let string = try field.decode(String.self)
         guard let bytes = Base58Tools.base58Decode(string) else {
             throw DecodingError.typeMismatch(Base58.self,.init(codingPath: [], debugDescription: "Could not unwrap string to base58"))
