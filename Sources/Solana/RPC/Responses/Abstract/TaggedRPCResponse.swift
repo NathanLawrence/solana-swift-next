@@ -24,7 +24,7 @@ public struct TaggedRPCResponse<Success: Codable, Failure: Error & Decodable>: D
     /**
      The request identifier shared with the server.
      */
-    public let id: Int
+    public let id: UInt
 
     /**
      The version of the JSON-RPC spec.
