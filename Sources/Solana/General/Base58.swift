@@ -12,7 +12,7 @@ import BigInt
 /**
  Data represented as a Base58-encoded string.
  */
-public struct Base58: Codable {
+public struct Base58: Codable, Hashable {
     /**
      The underlying data the Base58 structure represents.
      */
@@ -52,6 +52,10 @@ public struct Base58: Codable {
             throw DecodingError.typeMismatch(Base58.self,.init(codingPath: [], debugDescription: "Could not unwrap string to base58"))
         }
         self.init(bytes)
+    }
+
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(data)
     }
 }
 

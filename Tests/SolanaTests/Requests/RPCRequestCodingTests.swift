@@ -6,20 +6,60 @@
 //
 
 import XCTest
+@testable import Solana
 
 class RPCRequestCodingTests: XCTestCase {
 
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testSampleRequestCodes() throws {
+        struct SampleRequest: RPCRequest, Equatable {
+            typealias Response = Int
+
+            typealias Value = Base58
+
+            typealias KeyedBody = NoKeyedBody
+
+            var payload: RPCRequestPayload<Base58, NoKeyedBody> {
+                return RPCRequestPayload(value: value, requestMetadata: NoKeyedBody())
+            }
+
+            var value: Base58
+        }
+
+        let request = SampleRequest(value: .init(string: "abc")!)
+        let coder = JSONEncoder()
+        let encoded = try coder.encode(TaggedRPCRequest(request, id: 1))
+        XCTAssertEqual(String(data: encoded, encoding: .utf8),
+                       #"{"jsonrpc":"2.0","id":1,"params":["abc"]}"#)
+
+        XCTAssertJSONEqual(#"{"jsonrpc":"2.0","id":1,"params":["abc"]}"#.data(using: .utf8)!, encoded)
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testSampleRequestWithKeyedBodyCodes() throws {
+
+        struct HelloWorld: Codable, Hashable, RPCRequestKeyedBody {
+            var text = "hello world"
         }
+
+        struct SampleRequest: RPCRequest, Equatable {
+            typealias Response = Int
+
+            typealias Value = Base58
+
+            typealias KeyedBody = HelloWorld
+
+            var payload: RPCRequestPayload<Base58, HelloWorld> {
+                return RPCRequestPayload(value: value, requestMetadata: HelloWorld())
+            }
+
+            var value: Base58
+        }
+
+        let request = SampleRequest(value: .init(string: "abc")!)
+        let coder = JSONEncoder()
+        let encoded = try coder.encode(TaggedRPCRequest(request, id: 1))
+        XCTAssertEqual(String(data: encoded, encoding: .utf8),
+                       #"{"jsonrpc":"2.0","id":1,"params":["abc",{"text":"hello world"}]}"#)
     }
 
 }

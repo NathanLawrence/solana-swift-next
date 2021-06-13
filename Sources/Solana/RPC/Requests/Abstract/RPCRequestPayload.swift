@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 public struct RPCRequestPayload<Value: Encodable, RequestMetadata: RPCRequestKeyedBody>: Encodable {
     let value: Value
     let requestMetadata: RequestMetadata
