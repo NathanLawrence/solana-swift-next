@@ -34,7 +34,7 @@ public class RPCSession {
     /**
      Creates an automatically-connecting Combine publisher that responds to a given request. Since the request has not already been wrapped with `TaggedRPCRequest`, this will create an identifier and its tags without user intervention.
      */
-    func publisher<Request: RPCRequest>(for unwrappedRequest: Request)
+    public func publisher<Request: RPCRequest>(for unwrappedRequest: Request)
         -> AnyPublisher<TaggedRPCResponse<Request.Response, SolanaNodeError>, Error> {
         return requestAdaptor.publisher(for: unwrappedRequest)
     }
@@ -42,7 +42,7 @@ public class RPCSession {
     /**
      Creates an automatically-connecting Combine publisher that responds to a given request.
      */
-    func publisher<Request: RPCRequest>(for request: TaggedRPCRequest<Request>)
+    public func publisher<Request: RPCRequest>(for request: TaggedRPCRequest<Request>)
         -> AnyPublisher<TaggedRPCResponse<Request.Response, SolanaNodeError>, Error> {
         return requestAdaptor.publisher(for: request)
     }
@@ -50,7 +50,7 @@ public class RPCSession {
     /**
      Creates an automatically-connecting Combine publisher that emits signals from a web socket task created for a given request. Since the request has not already been wrapped with `TaggedRPCRequest`, this will create an identifier and its tags internally.
      */
-    func webSocketPublisher<Request: WebSocketRequest>(for untaggedRequest: Request)
+    public func webSocketPublisher<Request: WebSocketRequest>(for untaggedRequest: Request)
     -> AnyPublisher<URLSessionWebSocketTask.Message, WebSocketError> {
         return requestAdaptor.webSocketPublisher(for: untaggedRequest)
     }
@@ -58,7 +58,7 @@ public class RPCSession {
     /**
      Creates an automatically-connecting Combine publisher that emits signals from a web socket task created for a given request.
      */
-    func webSocketPublisher<Request: WebSocketRequest>(for taggedRequest: TaggedRPCRequest<Request>)
+    public func webSocketPublisher<Request: WebSocketRequest>(for taggedRequest: TaggedRPCRequest<Request>)
     -> AnyPublisher<URLSessionWebSocketTask.Message, WebSocketError> {
         return requestAdaptor.webSocketPublisher(for: taggedRequest)
     }

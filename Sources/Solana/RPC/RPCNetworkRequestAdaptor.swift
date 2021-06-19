@@ -8,13 +8,13 @@
 import Foundation
 import Combine
 
+/**
+ The default RPC session behavior adaptor, which uses network requests to a node on the Solana blockchain.
+ */
 public class RPCNetworkRequestAdaptor: RPCRequestAdaptor {
-    internal init(task: URLSessionDataTask? = nil, nodeURL: URL) {
-        self.task = task
+    public init( nodeURL: URL) {
         self.nodeURL = nodeURL
     }
-
-    var task: URLSessionDataTask?
 
     public func publisher<Request>(for request: TaggedRPCRequest<Request>)
     -> AnyPublisher<TaggedRPCResponse<Request.Response, SolanaNodeError>, Error>
