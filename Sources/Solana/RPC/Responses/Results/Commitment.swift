@@ -20,7 +20,7 @@ public enum Commitment: String, RawRepresentable, Codable {
      Query the most recent block which has reached 1 confirmation by the cluster.
      */
     case confirmed
-    
+
     /**
      Query the most recent block which has been finalized by the cluster.
      */

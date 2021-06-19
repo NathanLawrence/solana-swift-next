@@ -97,4 +97,3 @@ class Base58SwiftTests: XCTestCase {
         XCTAssertEqual(expectedOutput, base58.stringValue)
     }
 }
-

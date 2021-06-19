@@ -72,7 +72,6 @@ public struct TaggedRPCRequest<Request: RPCRequest>: Encodable {
     }
 }
 
-
 extension String: CodingKey {
     public init?(intValue: Int) {
         nil

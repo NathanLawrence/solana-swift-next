@@ -25,7 +25,7 @@ struct WebSocketPublisher: Publisher {
     let session: URLSession
 
     func receive<S>(subscriber: S)
-        where S : Subscriber, WebSocketError == S.Failure,
+        where S: Subscriber, WebSocketError == S.Failure,
         URLSessionWebSocketTask.Message == S.Input {
             subscriber.receive(subscription: WebSocketSubscription(self, subscriber))
     }
@@ -38,7 +38,6 @@ struct WebSocketPublisher: Publisher {
             private var demand: Subscribers.Demand = .max(0)
             private var publisher: WebSocketPublisher?
             private var task: URLSessionWebSocketTask?
-
 
             init(_ publisher: WebSocketPublisher, _ target: Target) {
                 self.target = target
@@ -62,7 +61,7 @@ struct WebSocketPublisher: Publisher {
             }
 
             private func messageReceiveHandler(with result: Result<WebSocketPublisher.Output, Error>) {
-                let activeTarget = locked { () ->  Target? in
+                let activeTarget = locked { () -> Target? in
                     guard self.demand > 0,
                           publisher != nil,
                           task != nil,

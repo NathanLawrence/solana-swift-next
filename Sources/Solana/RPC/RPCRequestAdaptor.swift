@@ -19,7 +19,6 @@ public protocol RPCRequestAdaptor {
     func publish<Request: RPCRequest>(_ request: TaggedRPCRequest<Request>) -> AnyPublisher<TaggedRPCResponse<Request.Response, SolanaNodeError>, Error>
 }
 
-
 extension RPCRequestAdaptor {
     public func publish<Request: RPCRequest>(_ unwrappedRequest: Request) -> AnyPublisher<TaggedRPCResponse<Request.Response, SolanaNodeError>, Error> {
         let wrapped = TaggedRPCRequest(unwrappedRequest)
