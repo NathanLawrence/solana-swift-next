@@ -49,7 +49,11 @@ public struct Base58: Codable, Hashable {
         let field = try decoder.singleValueContainer()
         let string = try field.decode(String.self)
         guard let bytes = Base58Tools.base58Decode(string) else {
-            throw DecodingError.typeMismatch(Base58.self, .init(codingPath: [], debugDescription: "Could not unwrap string to base58"))
+            throw DecodingError
+                .typeMismatch(
+                    Base58.self,
+                    .init(codingPath: [], debugDescription: "Could not unwrap string to base58")
+                )
         }
         self.init(bytes)
     }
@@ -124,15 +128,15 @@ internal enum Base58Tools {
     /// - Returns: Bytes representing the decoded input, or nil if decoding failed.
     public static func base58Decode(_ input: String) -> [Byte]? {
         var answer = zero
-        var i = BigUInt(1)
+        var valI = BigUInt(1)
         let byteString = [Byte](input.utf8)
 
         for char in byteString.reversed() {
             guard let alphabetIndex = alphabet.firstIndex(of: char) else {
                 return nil
             }
-            answer += (i * BigUInt(alphabetIndex))
-            i *= radix
+            answer += (valI * BigUInt(alphabetIndex))
+            valI *= radix
         }
 
         let bytes = answer.serialize()

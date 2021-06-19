@@ -31,11 +31,13 @@ public class RPCSession {
      */
     public let requestAdaptor: RPCRequestAdaptor
 
-    func publish<Request: RPCRequest>(_ unwrappedRequest: Request) -> AnyPublisher<TaggedRPCResponse<Request.Response, SolanaNodeError>, Error> {
+    func publish<Request: RPCRequest>(_ unwrappedRequest: Request)
+        -> AnyPublisher<TaggedRPCResponse<Request.Response, SolanaNodeError>, Error> {
         return requestAdaptor.publish(unwrappedRequest)
     }
 
-    func publish<Request: RPCRequest>(_ request: TaggedRPCRequest<Request>) -> AnyPublisher<TaggedRPCResponse<Request.Response, SolanaNodeError>, Error> {
+    func publish<Request: RPCRequest>(_ request: TaggedRPCRequest<Request>)
+        -> AnyPublisher<TaggedRPCResponse<Request.Response, SolanaNodeError>, Error> {
         return requestAdaptor.publish(request)
     }
 

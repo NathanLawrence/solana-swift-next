@@ -16,7 +16,8 @@ public class RPCNetworkRequestAdaptor: RPCRequestAdaptor {
 
     var task: URLSessionDataTask?
 
-    public func publish<Request>(_ request: TaggedRPCRequest<Request>) -> AnyPublisher<TaggedRPCResponse<Request.Response, SolanaNodeError>, Error> where Request: RPCRequest {
+    public func publish<Request>(_ request: TaggedRPCRequest<Request>) -> AnyPublisher<TaggedRPCResponse<Request.Response, SolanaNodeError>, Error>
+        where Request: RPCRequest {
         Just(request)
             .encode(encoder: RPC.requestEncoder)
             .mapError { RPCNetworkRequestError.requestEncodingError($0) }
