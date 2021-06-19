@@ -25,9 +25,5 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: SwiftPM Jazzy Docs
-      # You may pin to the exact commit or the version.
-      # uses: sersoft-gmbh/swifty-docs-action@d1394b661b707ecaedab67127ffeeb96b98b8487
-        uses: sersoft-gmbh/swifty-docs-action@v1.2.0
-        with:
-          source: ${{github.workspace}}
+      - name: Lint
+        run: swiftlint
