@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>RPCNode Structure Reference</title>
+    <title>RawDataCodingError Structure Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset="utf-8">
@@ -14,9 +14,9 @@
   </head>
   <body>
 
-    <a name="//apple_ref/swift/Struct/RPCNode" class="dashAnchor"></a>
+    <a name="//apple_ref/swift/Struct/RawDataCodingError" class="dashAnchor"></a>
 
-    <a title="RPCNode Structure Reference"></a>
+    <a title="RawDataCodingError Structure Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -38,7 +38,7 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="../index.html">Solana Reference</a>
       <img class="carat" src="../img/carat.png" />
-      RPCNode Structure Reference
+      RawDataCodingError Structure Reference
     </p>
 
     <div class="content-wrapper">
@@ -248,15 +248,15 @@
 
         <section class="section">
           <div class="section-content top-matter">
-            <h1>RPCNode</h1>
+            <h1>RawDataCodingError</h1>
               <div class="declaration">
                 <div class="language">
                   
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">RPCNode</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">RawDataCodingError</span></code></pre>
 
                 </div>
               </div>
-            <p>A node on the Solana network, addressable via JSON-RPC calls.</p>
+            <p>The error a Solana SDK object throws when RawDataCoding fails.</p>
 
           </div>
         </section>
@@ -268,9 +268,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:6Solana7RPCNodeV3urlAC10Foundation3URLV_tcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(url:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Solana7RPCNodeV3urlAC10Foundation3URLV_tcfc">init(url:<wbr>)</a>
+                    <a name="/s:6Solana18RawDataCodingErrorV7message010underlyingE0ACSS_s0E0_pSgtcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(message:underlyingError:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Solana18RawDataCodingErrorV7message010underlyingE0ACSS_s0E0_pSgtcfc">init(message:<wbr>underlyingError:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -285,34 +285,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span><span class="p">)</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:6Solana7RPCNodeV3url10Foundation3URLVvp"></a>
-                    <a name="//apple_ref/swift/Property/url" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Solana7RPCNodeV3url10Foundation3URLVvp">url</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">underlyingError</span><span class="p">:</span> <span class="kt">Error</span><span class="p">?)</span></code></pre>
 
                         </div>
                       </div>

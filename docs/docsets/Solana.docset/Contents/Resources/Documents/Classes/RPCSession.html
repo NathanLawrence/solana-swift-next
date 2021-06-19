@@ -23,7 +23,7 @@
         <a class="header-link" href="../index.html">
           Solana Docs
         </a>
-         (68% documented)
+         (70% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -180,6 +180,15 @@
                 <a class="nav-group-task-link" href="../Other%20Protocols.html#/s:6Solana11InstructionP">Instruction</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Other%20Protocols.html#/s:6Solana13RawDataCodingP">RawDataCoding</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/RawDataDecoding.html">RawDataDecoding</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/RawDataEncoding.html">RawDataEncoding</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Protocols/Transaction.html">Transaction</a>
               </li>
             </ul>
@@ -207,6 +216,9 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Structs/NoRPCRequestValue.html">NoRPCRequestValue</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/RawDataCodingError.html">RawDataCodingError</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Other%20Structs.html#/s:6Solana0A9NodeErrorV">SolanaNodeError</a>
@@ -244,7 +256,7 @@
 
                 </div>
               </div>
-            <p>Undocumented</p>
+            <p>A session that handles communication with the Solana JSON-RPC API.</p>
 
           </div>
         </section>
@@ -266,7 +278,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Start a networked JSON-RPC session with a given node&rsquo;s URL.</p>
 
                       </div>
                       <div class="declaration">
@@ -274,6 +286,33 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Solana10RPCSessionC7adaptorAcA17RPCRequestAdaptor_p_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(adaptor:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Solana10RPCSessionC7adaptorAcA17RPCRequestAdaptor_p_tcfc">init(adaptor:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Start a JSON-RPC session with a custom <code><a href="../Protocols/RPCRequestAdaptor.html">RPCRequestAdaptor</a></code> conforming object. Use this initializer to build a custom debugging or testing pipeline.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">adaptor</span><span class="p">:</span> <span class="kt"><a href="../Protocols/RPCRequestAdaptor.html">RPCRequestAdaptor</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -293,7 +332,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The active RPC Request Adapter used on this RPC Session. An <code><a href="../Protocols/RPCRequestAdaptor.html">RPCRequestAdaptor</a></code> determines how RPC responses are sent through the Solana SDK. To build a custom debugging or testing pipeline, you can provide your own <code><a href="../Protocols/RPCRequestAdaptor.html">RPCRequestAdaptor</a></code> conforming object.</p>
 
                       </div>
                       <div class="declaration">
@@ -301,6 +340,35 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">requestAdaptor</span><span class="p">:</span> <span class="kt"><a href="../Protocols/RPCRequestAdaptor.html">RPCRequestAdaptor</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Solana10RPCSessionC26transactionSafeModeEnabledSbvp"></a>
+                    <a name="//apple_ref/swift/Property/transactionSafeModeEnabled" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Solana10RPCSessionC26transactionSafeModeEnabledSbvp">transactionSafeModeEnabled</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>When Transaction Safe Mode is enabled, the framework will attempt to validate transactions before they are submitted to the chain. If a transaction is potentially dangerous or has inconsistent signatures, the framework will trigger a precondition failure, abort the action, and allow you to investigate the error.</p>
+
+<p>By default, Transaction Safe Mode is enabled when your app is built in a debug setting and disabled in production.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">transactionSafeModeEnabled</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>

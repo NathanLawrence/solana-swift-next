@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>RPCNode Structure Reference</title>
+    <title>RawDataEncoding Protocol Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset="utf-8">
@@ -14,9 +14,9 @@
   </head>
   <body>
 
-    <a name="//apple_ref/swift/Struct/RPCNode" class="dashAnchor"></a>
+    <a name="//apple_ref/swift/Protocol/RawDataEncoding" class="dashAnchor"></a>
 
-    <a title="RPCNode Structure Reference"></a>
+    <a title="RawDataEncoding Protocol Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -38,7 +38,7 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="../index.html">Solana Reference</a>
       <img class="carat" src="../img/carat.png" />
-      RPCNode Structure Reference
+      RawDataEncoding Protocol Reference
     </p>
 
     <div class="content-wrapper">
@@ -248,15 +248,15 @@
 
         <section class="section">
           <div class="section-content top-matter">
-            <h1>RPCNode</h1>
+            <h1>RawDataEncoding</h1>
               <div class="declaration">
                 <div class="language">
                   
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">RPCNode</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">RawDataEncoding</span></code></pre>
 
                 </div>
               </div>
-            <p>A node on the Solana network, addressable via JSON-RPC calls.</p>
+            <p>A protocol that indicates a data structure can be rendered as raw <code>Data</code>.</p>
 
           </div>
         </section>
@@ -268,9 +268,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:6Solana7RPCNodeV3urlAC10Foundation3URLV_tcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(url:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Solana7RPCNodeV3urlAC10Foundation3URLV_tcfc">init(url:<wbr>)</a>
+                    <a name="/s:6Solana15RawDataEncodingP03rawC010Foundation0C0VyF"></a>
+                    <a name="//apple_ref/swift/Method/rawData()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Solana15RawDataEncodingP03rawC010Foundation0C0VyF">rawData()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -285,34 +285,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span><span class="p">)</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:6Solana7RPCNodeV3url10Foundation3URLVvp"></a>
-                    <a name="//apple_ref/swift/Property/url" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Solana7RPCNodeV3url10Foundation3URLVvp">url</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">rawData</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Data</span></code></pre>
 
                         </div>
                       </div>
