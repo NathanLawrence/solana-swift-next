@@ -13,6 +13,8 @@ class RPCRequestCodingTests: XCTestCase {
 
     func testSampleRequestCodes() throws {
         struct SampleRequest: RPCRequest, Equatable {
+            static let methodName = "sampleRequest"
+
             typealias Response = Int
 
             typealias Value = Base58
@@ -30,9 +32,9 @@ class RPCRequestCodingTests: XCTestCase {
         let coder = JSONEncoder()
         let encoded = try coder.encode(TaggedRPCRequest(request, id: 1))
         XCTAssertEqual(String(data: encoded, encoding: .utf8),
-                       #"{"jsonrpc":"2.0","id":1,"params":["abc"]}"#)
+                       #"{"jsonrpc":"2.0","method":"sampleRequest","id":1,"params":["abc"]}"#)
 
-        XCTAssertJSONEqual(#"{"jsonrpc":"2.0","id":1,"params":["abc"]}"#.data(using: .utf8)!, encoded)
+        XCTAssertJSONEqual(#"{"jsonrpc":"2.0","method":"sampleRequest","id":1,"params":["abc"]}"#.data(using: .utf8)!, encoded)
     }
 
     func testSampleRequestWithKeyedBodyCodes() throws {
@@ -48,6 +50,8 @@ class RPCRequestCodingTests: XCTestCase {
 
             typealias KeyedBody = HelloWorld
 
+            static let methodName: String = "sampleRequest"
+
             var payload: RPCRequestPayload<Base58, HelloWorld> {
                 return RPCRequestPayload(value: value, requestMetadata: HelloWorld())
             }
@@ -59,7 +63,7 @@ class RPCRequestCodingTests: XCTestCase {
         let coder = JSONEncoder()
         let encoded = try coder.encode(TaggedRPCRequest(request, id: 1))
         XCTAssertEqual(String(data: encoded, encoding: .utf8),
-                       #"{"jsonrpc":"2.0","id":1,"params":["abc",{"text":"hello world"}]}"#)
+                       #"{"jsonrpc":"2.0","method":"sampleRequest","id":1,"params":["abc",{"text":"hello world"}]}"#)
     }
 
 }
