@@ -38,8 +38,8 @@ import Foundation
  */
 public struct TaggedRPCRequest<Request: RPCRequest>: Encodable {
     public init(_ request: Request,
-                id: Int = UUID().hashValue) {
-        self.id = id
+                id: UInt?  = nil) {
+        self.id = id ?? UInt.random(in: UInt.min..<UInt.max)
         self.request = request
     }
 
@@ -51,7 +51,7 @@ public struct TaggedRPCRequest<Request: RPCRequest>: Encodable {
     /**
      The request identifier shared with the server.
      */
-    var id: Int = UUID().hashValue
+    var id: UInt = 1
 
     /**
      The request that will be sent to the server.
@@ -61,7 +61,13 @@ public struct TaggedRPCRequest<Request: RPCRequest>: Encodable {
     public func encode(to encoder: Encoder) throws {
         var fieldset = encoder.container(keyedBy: String.self)
         try fieldset.encode(rpcSpecficationVersion, forKey: "jsonrpc")
-        try fieldset.encode(request.payload, forKey: "params")
+        try fieldset.encode(Request.methodName, forKey: "method")
+
+        if !(Request.Value.self == NoRPCRequestValue.self &&
+             Request.KeyedBody.self == NoKeyedBody.self) {
+            try fieldset.encode(request.payload, forKey: "params")
+        }
+
         try fieldset.encode(id, forKey: "id")
     }
 }

@@ -16,6 +16,7 @@ public protocol RPCRequestKeyedBody: Encodable, Hashable { }
  A structure to use to indicate that there is no key-value paired information that should accompany a JSON-RPC request.
  */
 public struct NoKeyedBody: RPCRequestKeyedBody {
+    init() {}
     public func encode(to encoder: Encoder) throws {
         assertionFailure("`NoRequestMetadata` objects should not be encoded into a response.")
         return

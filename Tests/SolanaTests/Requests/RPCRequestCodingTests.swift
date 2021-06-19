@@ -31,6 +31,8 @@ class RPCRequestCodingTests: XCTestCase {
         let encoded = try coder.encode(TaggedRPCRequest(request, id: 1))
         XCTAssertEqual(String(data: encoded, encoding: .utf8),
                        #"{"jsonrpc":"2.0","id":1,"params":["abc"]}"#)
+
+        XCTAssertJSONEqual(#"{"jsonrpc":"2.0","id":1,"params":["abc"]}"#.data(using: .utf8)!, encoded)
     }
 
     func testSampleRequestWithKeyedBodyCodes() throws {

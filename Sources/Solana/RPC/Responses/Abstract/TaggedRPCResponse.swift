@@ -10,7 +10,7 @@ import Foundation
 /**
  A JSON-RPC response, indicating either success or failure, wrapped in an identifier and specification version.
  */
-public struct TaggedRPCResponse<Success: Codable, Failure: Error> {
+public struct TaggedRPCResponse<Success: Codable, Failure: Error & Decodable>: Decodable {
     /**
      The result of the RPC call, if it succeeded.
      */
@@ -24,7 +24,7 @@ public struct TaggedRPCResponse<Success: Codable, Failure: Error> {
     /**
      The request identifier shared with the server.
      */
-    public let id: Int
+    public let id: UInt
 
     /**
      The version of the JSON-RPC spec.
@@ -45,10 +45,7 @@ public struct TaggedRPCResponse<Success: Codable, Failure: Error> {
     }
 
     enum CodingKeys: String, CodingKey {
-        case result
-        case error
-        case id
-
+        case result, error, id
         case rpcSpecificationVersion = "jsonrpc"
     }
 }

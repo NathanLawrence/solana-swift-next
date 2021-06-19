@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct RPCRequestPayload<Value: Encodable & Hashable, RequestMetadata: RPCRequestKeyedBody>: Encodable, Hashable {
+public struct RPCRequestPayload<Value: Encodable, RequestMetadata: RPCRequestKeyedBody>: Encodable {
     let value: Value
     let requestMetadata: RequestMetadata
 
@@ -20,6 +20,15 @@ public struct RPCRequestPayload<Value: Encodable & Hashable, RequestMetadata: RP
             try container.encode(requestMetadata)
         }
 
+        return
+    }
+}
+
+public struct NoRPCRequestValue: Codable {
+    init() {}
+
+    public func encode(to encoder: Encoder) throws {
+        assertionFailure("`NoRPCRequestValue` objects should not be encoded into a request.")
         return
     }
 }
