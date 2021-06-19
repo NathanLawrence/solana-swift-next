@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 /**
  A session that handles communication with the Solana JSON-RPC API.
@@ -29,6 +30,14 @@ public class RPCSession {
      The active RPC Request Adapter used on this RPC Session. An `RPCRequestAdaptor` determines how RPC responses are sent through the Solana SDK. To build a custom debugging or testing pipeline, you can provide your own `RPCRequestAdaptor` conforming object.
      */
     public let requestAdaptor: RPCRequestAdaptor
+
+    func publish<Request: RPCRequest>(_ unwrappedRequest: Request) -> AnyPublisher<TaggedRPCResponse<Request.Response, SolanaNodeError>, Error> {
+        return requestAdaptor.publish(unwrappedRequest)
+    }
+
+    func publish<Request: RPCRequest>(_ request: TaggedRPCRequest<Request>) -> AnyPublisher<TaggedRPCResponse<Request.Response, SolanaNodeError>, Error> {
+        return requestAdaptor.publish(request)
+    }
 
 
     /**
