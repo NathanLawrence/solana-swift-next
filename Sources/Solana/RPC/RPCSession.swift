@@ -7,11 +7,27 @@
 
 import Foundation
 
+/**
+ A session that handles communication with the Solana JSON-RPC API.
+ */
 public class RPCSession {
+    /**
+     Start a networked JSON-RPC session with a given node's URL.
+     */
     public init(url: URL) {
         self.requestAdaptor = RPCNetworkRequestAdaptor(nodeURL: url)
     }
 
+    /**
+     Start a JSON-RPC session with a custom `RPCRequestAdaptor` conforming object. Use this initializer to build a custom debugging or testing pipeline.
+     */
+    public init(adaptor: RPCRequestAdaptor) {
+        self.requestAdaptor = adaptor
+    }
+
+    /**
+     The active RPC Request Adapter used on this RPC Session. An `RPCRequestAdaptor` determines how RPC responses are sent through the Solana SDK. To build a custom debugging or testing pipeline, you can provide your own `RPCRequestAdaptor` conforming object.
+     */
     public let requestAdaptor: RPCRequestAdaptor
 
 
