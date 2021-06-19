@@ -54,7 +54,6 @@ extension RPCRequestAdaptor {
         return publisher(for: wrapped)
     }
 
-
     public func webSocketPublisher<Request: WebSocketRequest>(for untaggedRequest: Request)
     -> AnyPublisher<URLSessionWebSocketTask.Message, WebSocketError> {
         let taggedRequest = TaggedRPCRequest(untaggedRequest)
