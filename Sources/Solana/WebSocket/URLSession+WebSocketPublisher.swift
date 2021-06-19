@@ -129,5 +129,6 @@ struct WebSocketPublisher: Publisher {
 }
 
 public enum WebSocketError: Error {
+    case requestConstructionError(Error)
     case urlSessionError(Error)
 }

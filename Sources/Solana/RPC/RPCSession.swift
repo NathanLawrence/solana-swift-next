@@ -31,14 +31,36 @@ public class RPCSession {
      */
     public let requestAdaptor: RPCRequestAdaptor
 
-    func publish<Request: RPCRequest>(_ unwrappedRequest: Request)
+    /**
+     Creates an automatically-connecting Combine publisher that responds to a given request. Since the request has not already been wrapped with `TaggedRPCRequest`, this will create an identifier and its tags without user intervention.
+     */
+    func publisher<Request: RPCRequest>(for unwrappedRequest: Request)
         -> AnyPublisher<TaggedRPCResponse<Request.Response, SolanaNodeError>, Error> {
-        return requestAdaptor.publish(unwrappedRequest)
+        return requestAdaptor.publisher(for: unwrappedRequest)
     }
 
-    func publish<Request: RPCRequest>(_ request: TaggedRPCRequest<Request>)
+    /**
+     Creates an automatically-connecting Combine publisher that responds to a given request.
+     */
+    func publisher<Request: RPCRequest>(for request: TaggedRPCRequest<Request>)
         -> AnyPublisher<TaggedRPCResponse<Request.Response, SolanaNodeError>, Error> {
-        return requestAdaptor.publish(request)
+        return requestAdaptor.publisher(for: request)
+    }
+
+    /**
+     Creates an automatically-connecting Combine publisher that emits signals from a web socket task created for a given request. Since the request has not already been wrapped with `TaggedRPCRequest`, this will create an identifier and its tags internally.
+     */
+    func webSocketPublisher<Request: WebSocketRequest>(for untaggedRequest: Request)
+    -> AnyPublisher<URLSessionWebSocketTask.Message, WebSocketError> {
+        return requestAdaptor.webSocketPublisher(for: untaggedRequest)
+    }
+
+    /**
+     Creates an automatically-connecting Combine publisher that emits signals from a web socket task created for a given request.
+     */
+    func webSocketPublisher<Request: WebSocketRequest>(for taggedRequest: TaggedRPCRequest<Request>)
+    -> AnyPublisher<URLSessionWebSocketTask.Message, WebSocketError> {
+        return requestAdaptor.webSocketPublisher(for: taggedRequest)
     }
 
     /**
