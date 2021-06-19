@@ -16,7 +16,7 @@ public class RPCNetworkRequestAdaptor: RPCRequestAdaptor {
 
     var task: URLSessionDataTask?
 
-    public func publish<Request>(_ request: TaggedRPCRequest<Request>) -> AnyPublisher<TaggedRPCResponse<Request.Response, SolanaNodeError>, Error>
+    public func publisher<Request>(for request: TaggedRPCRequest<Request>) -> AnyPublisher<TaggedRPCResponse<Request.Response, SolanaNodeError>, Error>
         where Request: RPCRequest {
         Just(request)
             .encode(encoder: RPC.requestEncoder)
@@ -43,6 +43,17 @@ public class RPCNetworkRequestAdaptor: RPCRequestAdaptor {
                     .decode(type: TaggedRPCResponse<Request.Response, SolanaNodeError>.self,
                             decoder: RPC.responseDecoder)
                     .mapError { RPCNetworkRequestError.responseDecodingError($0) }
+            }
+            .eraseToAnyPublisher()
+    }
+    
+    public func webSocketPublisher<Request: WebSocketRequest>(for taggedRequest: TaggedRPCRequest<Request>)
+    -> AnyPublisher<URLSessionWebSocketTask.Message, WebSocketError> {
+        Just(taggedRequest)
+            .tryMap { try $0.urlRequest(for: nodeURL) }
+            .mapError { WebSocketError.requestConstructionError($0) }
+            .flatMap { [unowned self] urlRequest in
+                self.urlSession.webSocketPublisher(for: urlRequest)
             }
             .eraseToAnyPublisher()
     }

@@ -70,6 +70,15 @@ public struct TaggedRPCRequest<Request: RPCRequest>: Encodable {
 
         try fieldset.encode(id, forKey: "id")
     }
+
+    internal func urlRequest(for nodeURL: URL) throws -> URLRequest {
+        let encoded = try RPC.requestEncoder.encode(self)
+        var request = URLRequest(url: nodeURL)
+        request.httpMethod = "POST"
+        request.httpBody = encoded
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        return request
+    }
 }
 
 extension String: CodingKey {
