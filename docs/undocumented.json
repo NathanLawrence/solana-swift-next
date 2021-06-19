@@ -37,9 +37,9 @@
     },
     {
       "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/RPC/RPCNetworkRequestAdaptor.swift",
-      "line": 11,
-      "symbol": "RPCNetworkRequestAdaptor",
-      "symbol_kind": "source.lang.swift.decl.class",
+      "line": 15,
+      "symbol": "RPCNetworkRequestAdaptor.init(nodeURL:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {

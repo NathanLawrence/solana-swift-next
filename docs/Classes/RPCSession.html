@@ -23,7 +23,7 @@
         <a class="header-link" href="../index.html">
           Solana Docs
         </a>
-         (71% documented)
+         (72% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -343,6 +343,118 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">requestAdaptor</span><span class="p">:</span> <span class="kt"><a href="../Protocols/RPCRequestAdaptor.html">RPCRequestAdaptor</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Solana10RPCSessionC9publisher3for7Combine12AnyPublisherVyAA17TaggedRPCResponseVy8ResponseQzAA0A9NodeErrorVGs0L0_pGx_tAA10RPCRequestRzSEALRQlF"></a>
+                    <a name="//apple_ref/swift/Method/publisher(for:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Solana10RPCSessionC9publisher3for7Combine12AnyPublisherVyAA17TaggedRPCResponseVy8ResponseQzAA0A9NodeErrorVGs0L0_pGx_tAA10RPCRequestRzSEALRQlF">publisher(for:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates an automatically-connecting Combine publisher that responds to a given request. Since the request has not already been wrapped with <code><a href="../Structs/TaggedRPCRequest.html">TaggedRPCRequest</a></code>, this will create an identifier and its tags without user intervention.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">publisher</span><span class="o">&lt;</span><span class="kt">Request</span><span class="p">:</span> <span class="kt"><a href="../Protocols/RPCRequest.html">RPCRequest</a></span><span class="o">&gt;</span><span class="p">(</span><span class="k">for</span> <span class="nv">unwrappedRequest</span><span class="p">:</span> <span class="kt">Request</span><span class="p">)</span>
+    <span class="o">-&gt;</span> <span class="kt">AnyPublisher</span><span class="o">&lt;</span><span class="kt"><a href="../Structs/TaggedRPCResponse.html">TaggedRPCResponse</a></span><span class="o">&lt;</span><span class="kt">Request</span><span class="o">.</span><span class="kt">Response</span><span class="p">,</span> <span class="kt"><a href="../Other%20Structs.html#/s:6Solana0A9NodeErrorV">SolanaNodeError</a></span><span class="o">&gt;</span><span class="p">,</span> <span class="kt">Error</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Solana10RPCSessionC9publisher3for7Combine12AnyPublisherVyAA17TaggedRPCResponseVy8ResponseQzAA0A9NodeErrorVGs0L0_pGAA0H10RPCRequestVyxG_tAA0M0RzSEALRQlF"></a>
+                    <a name="//apple_ref/swift/Method/publisher(for:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Solana10RPCSessionC9publisher3for7Combine12AnyPublisherVyAA17TaggedRPCResponseVy8ResponseQzAA0A9NodeErrorVGs0L0_pGAA0H10RPCRequestVyxG_tAA0M0RzSEALRQlF">publisher(for:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates an automatically-connecting Combine publisher that responds to a given request.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">publisher</span><span class="o">&lt;</span><span class="kt">Request</span><span class="p">:</span> <span class="kt"><a href="../Protocols/RPCRequest.html">RPCRequest</a></span><span class="o">&gt;</span><span class="p">(</span><span class="k">for</span> <span class="nv">request</span><span class="p">:</span> <span class="kt"><a href="../Structs/TaggedRPCRequest.html">TaggedRPCRequest</a></span><span class="o">&lt;</span><span class="kt">Request</span><span class="o">&gt;</span><span class="p">)</span>
+    <span class="o">-&gt;</span> <span class="kt">AnyPublisher</span><span class="o">&lt;</span><span class="kt"><a href="../Structs/TaggedRPCResponse.html">TaggedRPCResponse</a></span><span class="o">&lt;</span><span class="kt">Request</span><span class="o">.</span><span class="kt">Response</span><span class="p">,</span> <span class="kt"><a href="../Other%20Structs.html#/s:6Solana0A9NodeErrorV">SolanaNodeError</a></span><span class="o">&gt;</span><span class="p">,</span> <span class="kt">Error</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Solana10RPCSessionC18webSocketPublisher3for7Combine03AnyE0VySo015NSURLSessionWebD4TaskC10FoundationE7MessageOAA0jD5ErrorOGx_tAA0jD7RequestRzlF"></a>
+                    <a name="//apple_ref/swift/Method/webSocketPublisher(for:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Solana10RPCSessionC18webSocketPublisher3for7Combine03AnyE0VySo015NSURLSessionWebD4TaskC10FoundationE7MessageOAA0jD5ErrorOGx_tAA0jD7RequestRzlF">webSocketPublisher(for:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates an automatically-connecting Combine publisher that emits signals from a web socket task created for a given request. Since the request has not already been wrapped with <code><a href="../Structs/TaggedRPCRequest.html">TaggedRPCRequest</a></code>, this will create an identifier and its tags internally.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">webSocketPublisher</span><span class="o">&lt;</span><span class="kt">Request</span><span class="p">:</span> <span class="kt"><a href="../Other%20Protocols.html#/s:6Solana16WebSocketRequestP">WebSocketRequest</a></span><span class="o">&gt;</span><span class="p">(</span><span class="k">for</span> <span class="nv">untaggedRequest</span><span class="p">:</span> <span class="kt">Request</span><span class="p">)</span>
+<span class="o">-&gt;</span> <span class="kt">AnyPublisher</span><span class="o">&lt;</span><span class="kt">URLSessionWebSocketTask</span><span class="o">.</span><span class="kt">Message</span><span class="p">,</span> <span class="kt"><a href="../Enums/WebSocketError.html">WebSocketError</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Solana10RPCSessionC18webSocketPublisher3for7Combine03AnyE0VySo015NSURLSessionWebD4TaskC10FoundationE7MessageOAA0jD5ErrorOGAA16TaggedRPCRequestVyxG_tAA0jD7RequestRzlF"></a>
+                    <a name="//apple_ref/swift/Method/webSocketPublisher(for:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Solana10RPCSessionC18webSocketPublisher3for7Combine03AnyE0VySo015NSURLSessionWebD4TaskC10FoundationE7MessageOAA0jD5ErrorOGAA16TaggedRPCRequestVyxG_tAA0jD7RequestRzlF">webSocketPublisher(for:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates an automatically-connecting Combine publisher that emits signals from a web socket task created for a given request.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">webSocketPublisher</span><span class="o">&lt;</span><span class="kt">Request</span><span class="p">:</span> <span class="kt"><a href="../Other%20Protocols.html#/s:6Solana16WebSocketRequestP">WebSocketRequest</a></span><span class="o">&gt;</span><span class="p">(</span><span class="k">for</span> <span class="nv">taggedRequest</span><span class="p">:</span> <span class="kt"><a href="../Structs/TaggedRPCRequest.html">TaggedRPCRequest</a></span><span class="o">&lt;</span><span class="kt">Request</span><span class="o">&gt;</span><span class="p">)</span>
+<span class="o">-&gt;</span> <span class="kt">AnyPublisher</span><span class="o">&lt;</span><span class="kt">URLSessionWebSocketTask</span><span class="o">.</span><span class="kt">Message</span><span class="p">,</span> <span class="kt"><a href="../Enums/WebSocketError.html">WebSocketError</a></span><span class="o">&gt;</span></code></pre>
 
                         </div>
                       </div>
