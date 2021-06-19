@@ -43,7 +43,7 @@ class Base58SwiftTests: XCTestCase {
     public func testBase58DecodingForValidStrings() {
         for (decoded, encoded) in validStringDecodedToEncodedTuples {
             guard let bytes = Base58Tools.base58Decode(encoded) else {
-                XCTFail()
+                XCTFail("No decoded bytes")
                 return
             }
             let result = String(bytes: bytes, encoding: String.Encoding.utf8)
@@ -74,7 +74,7 @@ class Base58SwiftTests: XCTestCase {
         ]
 
         guard let actualOutput = Base58Tools.base58CheckDecode(inputString) else {
-            XCTFail()
+            XCTFail("no decoded bytes")
             return
         }
         XCTAssertEqual(actualOutput, expectedOutputData)
