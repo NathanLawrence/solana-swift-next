@@ -44,35 +44,28 @@
     },
     {
       "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/RPC/RPCNetworkRequestAdaptor.swift",
-      "line": 19,
-      "symbol": "RPCNetworkRequestAdaptor.publish(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/RPC/RPCNetworkRequestAdaptor.swift",
-      "line": 54,
+      "line": 66,
       "symbol": "RPCNetworkRequestError",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/RPC/RPCNetworkRequestAdaptor.swift",
-      "line": 55,
+      "line": 67,
       "symbol": "RPCNetworkRequestError.requestEncodingError(_:)",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/RPC/RPCNetworkRequestAdaptor.swift",
-      "line": 56,
+      "line": 68,
       "symbol": "RPCNetworkRequestError.networkFetchError(_:)",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/RPC/RPCNetworkRequestAdaptor.swift",
-      "line": 57,
+      "line": 69,
       "symbol": "RPCNetworkRequestError.responseDecodingError(_:)",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
@@ -93,22 +86,15 @@
     },
     {
       "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/RPC/RPCRequestAdaptor.swift",
-      "line": 17,
-      "symbol": "RPCRequestAdaptor.publish(_:)",
+      "line": 49,
+      "symbol": "RPCRequestAdaptor.publisher(for:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/RPC/RPCRequestAdaptor.swift",
-      "line": 23,
-      "symbol": "RPCRequestAdaptor.publish(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/RPC/RPCRequestAdaptor.swift",
-      "line": 31,
-      "symbol": "RPCRequestAdaptor.publish(_:)",
+      "line": 57,
+      "symbol": "RPCRequestAdaptor.webSocketPublisher(for:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -255,8 +241,22 @@
     {
       "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/WebSocket/URLSession+WebSocketPublisher.swift",
       "line": 132,
+      "symbol": "WebSocketError.requestConstructionError(_:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/WebSocket/URLSession+WebSocketPublisher.swift",
+      "line": 133,
       "symbol": "WebSocketError.urlSessionError(_:)",
       "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/WebSocket/WebSocketRequest.swift",
+      "line": 10,
+      "symbol": "WebSocketRequest",
+      "symbol_kind": "source.lang.swift.decl.protocol",
       "warning": "undocumented"
     }
   ],
