@@ -23,7 +23,7 @@
         <a class="header-link" href="../index.html">
           Solana Docs
         </a>
-         (82% documented)
+         (68% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -62,7 +62,7 @@
             <a class="nav-group-name-link" href="../Making%20RPC%20Requests.html">Making RPC Requests</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Making%20RPC%20Requests.html#/s:6Solana10RPCSessionC">RPCSession</a>
+                <a class="nav-group-task-link" href="../Classes/RPCSession.html">RPCSession</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Structs/RPCNode.html">RPCNode</a>
@@ -114,6 +114,9 @@
                 <a class="nav-group-task-link" href="../JSON-RPC%20Responses.html#/s:6Solana24GetLargestAccountsResulta">GetLargestAccountsResult</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../JSON-RPC%20Responses.html#/s:6Solana24GetLargestAccountsResulta">GetLargestAccountsResult</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Structs/LamportBalanceStatement.html">LamportBalanceStatement</a>
               </li>
             </ul>
@@ -135,10 +138,49 @@
             </ul>
           </li>
           <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Other%20Classes.html">Other Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/OptionalActor.html">OptionalActor</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RPCNetworkRequestAdaptor.html">RPCNetworkRequestAdaptor</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
             <a class="nav-group-name-link" href="../Other%20Enums.html">Other Enumerations</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Enums/Commitment.html">Commitment</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/RPCNetworkRequestError.html">RPCNetworkRequestError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/WebSocketError.html">WebSocketError</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Other%20Extensions.html">Other Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Other%20Extensions.html#/s:Sa">Array</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Other%20Protocols.html">Other Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Other%20Protocols.html#/s:6Solana24CompilableInstructionSetP">CompilableInstructionSet</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Other%20Protocols.html#/s:6Solana11InstructionP">Instruction</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/Transaction.html">Transaction</a>
               </li>
             </ul>
           </li>
@@ -149,10 +191,28 @@
                 <a class="nav-group-task-link" href="../Structs/AccountInfo.html">AccountInfo</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/BlockHeightRequest.html">BlockHeightRequest</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Structs/GetIdentityResult.html">GetIdentityResult</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Other%20Structs.html#/s:6Solana26GetInflationGovernorResultV">GetInflationGovernorResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Other%20Structs.html#/s:6Solana22InstructionListBuilderV">InstructionListBuilder</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/LargestAccountsRequest.html">LargestAccountsRequest</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/NoRPCRequestValue.html">NoRPCRequestValue</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Other%20Structs.html#/s:6Solana0A9NodeErrorV">SolanaNodeError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Other%20Structs.html#/s:6Solana14TransactionKeyV">TransactionKey</a>
               </li>
             </ul>
           </li>
@@ -186,7 +246,7 @@
               </div>
             <p>A protocol that represents the bridging logic betweeen a source of knowledge and a session that handles Solana JSON-RPC requests.</p>
 
-<p>Conform to this protocol and set up an <code><a href="../Making%20RPC%20Requests.html#/s:6Solana10RPCSessionC">RPCSession</a></code> object with your conforming object to create a custom testing or mock system. For normal use, <code>RPCNetworkRequestAdaptor</code> comes pre-configured, and <code>RPCPassthroughRequestAdaptor</code> can handle sending flat files from disk.</p>
+<p>Conform to this protocol and set up an <code><a href="../Classes/RPCSession.html">RPCSession</a></code> object with your conforming object to create a custom testing or mock system. For normal use, <code><a href="../Classes/RPCNetworkRequestAdaptor.html">RPCNetworkRequestAdaptor</a></code> comes pre-configured, and <code>RPCPassthroughRequestAdaptor</code> can handle sending flat files from disk.</p>
 
           </div>
         </section>
@@ -198,10 +258,13 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:6Solana17RPCRequestAdaptorP7publishy7Combine12AnyPublisherVyAA21RPCResponseAndContextVy8ResponseQyd__Gs5Error_pGqd__AA0B0Rd__AA0H0AKRQlF"></a>
+                    <a name="/s:6Solana17RPCRequestAdaptorP7publishy7Combine12AnyPublisherVyAA17TaggedRPCResponseVy8ResponseQyd__AA0A9NodeErrorVGs0L0_pGqd__AA0B0Rd__SEAKRQlF"></a>
                     <a name="//apple_ref/swift/Method/publish(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Solana17RPCRequestAdaptorP7publishy7Combine12AnyPublisherVyAA21RPCResponseAndContextVy8ResponseQyd__Gs5Error_pGqd__AA0B0Rd__AA0H0AKRQlF">publish(_:<wbr>)</a>
+                    <a class="token" href="#/s:6Solana17RPCRequestAdaptorP7publishy7Combine12AnyPublisherVyAA17TaggedRPCResponseVy8ResponseQyd__AA0A9NodeErrorVGs0L0_pGqd__AA0B0Rd__SEAKRQlF">publish(_:<wbr>)</a>
                     </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
                   </div>
                   <div class="height-container">
                     <div class="pointer-container"></div>
@@ -211,11 +274,16 @@
                         <p>Undocumented</p>
 
                       </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Undocumented</p>
+
+                      </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">publish</span><span class="o">&lt;</span><span class="kt">Request</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">unwrappedRequest</span><span class="p">:</span> <span class="kt">Request</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AnyPublisher</span><span class="o">&lt;</span><span class="kt"><a href="../Structs/RPCResponseAndContext.html">RPCResponseAndContext</a></span><span class="o">&lt;</span><span class="kt">Request</span><span class="o">.</span><span class="kt">Response</span><span class="o">&gt;</span><span class="p">,</span> <span class="kt">Error</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">Request</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/RPCRequest.html">RPCRequest</a></span><span class="p">,</span> <span class="kt">Request</span><span class="o">.</span><span class="kt">Response</span> <span class="p">:</span> <span class="kt"><a href="../JSON-RPC%20Responses.html#/s:6Solana11RPCResponseP">RPCResponse</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">publish</span><span class="o">&lt;</span><span class="kt">Request</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">unwrappedRequest</span><span class="p">:</span> <span class="kt">Request</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AnyPublisher</span><span class="o">&lt;</span><span class="kt"><a href="../Structs/TaggedRPCResponse.html">TaggedRPCResponse</a></span><span class="o">&lt;</span><span class="kt">Request</span><span class="o">.</span><span class="kt">Response</span><span class="p">,</span> <span class="kt"><a href="../Other%20Structs.html#/s:6Solana0A9NodeErrorV">SolanaNodeError</a></span><span class="o">&gt;</span><span class="p">,</span> <span class="kt">Error</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">Request</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/RPCRequest.html">RPCRequest</a></span><span class="p">,</span> <span class="kt">Request</span><span class="o">.</span><span class="kt">Response</span> <span class="p">:</span> <span class="kt">Encodable</span></code></pre>
 
                         </div>
                       </div>
@@ -225,9 +293,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:6Solana17RPCRequestAdaptorP7publishy7Combine12AnyPublisherVyAA21RPCResponseAndContextVy8ResponseQyd__Gs5Error_pGAA06TaggedB0Vyqd__GAA0B0Rd__AA0H0AKRQlF"></a>
+                    <a name="/s:6Solana17RPCRequestAdaptorP7publishy7Combine12AnyPublisherVyAA17TaggedRPCResponseVy8ResponseQyd__AA0A9NodeErrorVGs0L0_pGAA0hB0Vyqd__GAA0B0Rd__SEAKRQlF"></a>
                     <a name="//apple_ref/swift/Method/publish(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Solana17RPCRequestAdaptorP7publishy7Combine12AnyPublisherVyAA21RPCResponseAndContextVy8ResponseQyd__Gs5Error_pGAA06TaggedB0Vyqd__GAA0B0Rd__AA0H0AKRQlF">publish(_:<wbr>)</a>
+                    <a class="token" href="#/s:6Solana17RPCRequestAdaptorP7publishy7Combine12AnyPublisherVyAA17TaggedRPCResponseVy8ResponseQyd__AA0A9NodeErrorVGs0L0_pGAA0hB0Vyqd__GAA0B0Rd__SEAKRQlF">publish(_:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -242,7 +310,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">publish</span><span class="o">&lt;</span><span class="kt">Request</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">request</span><span class="p">:</span> <span class="kt"><a href="../Structs/TaggedRPCRequest.html">TaggedRPCRequest</a></span><span class="o">&lt;</span><span class="kt">Request</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AnyPublisher</span><span class="o">&lt;</span><span class="kt"><a href="../Structs/RPCResponseAndContext.html">RPCResponseAndContext</a></span><span class="o">&lt;</span><span class="kt">Request</span><span class="o">.</span><span class="kt">Response</span><span class="o">&gt;</span><span class="p">,</span> <span class="kt">Error</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">Request</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/RPCRequest.html">RPCRequest</a></span><span class="p">,</span> <span class="kt">Request</span><span class="o">.</span><span class="kt">Response</span> <span class="p">:</span> <span class="kt"><a href="../JSON-RPC%20Responses.html#/s:6Solana11RPCResponseP">RPCResponse</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">publish</span><span class="o">&lt;</span><span class="kt">Request</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">request</span><span class="p">:</span> <span class="kt"><a href="../Structs/TaggedRPCRequest.html">TaggedRPCRequest</a></span><span class="o">&lt;</span><span class="kt">Request</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AnyPublisher</span><span class="o">&lt;</span><span class="kt"><a href="../Structs/TaggedRPCResponse.html">TaggedRPCResponse</a></span><span class="o">&lt;</span><span class="kt">Request</span><span class="o">.</span><span class="kt">Response</span><span class="p">,</span> <span class="kt"><a href="../Other%20Structs.html#/s:6Solana0A9NodeErrorV">SolanaNodeError</a></span><span class="o">&gt;</span><span class="p">,</span> <span class="kt">Error</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">Request</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/RPCRequest.html">RPCRequest</a></span><span class="p">,</span> <span class="kt">Request</span><span class="o">.</span><span class="kt">Response</span> <span class="p">:</span> <span class="kt">Encodable</span></code></pre>
 
                         </div>
                       </div>
@@ -257,7 +325,7 @@
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2021 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2021-06-02)</p>
+      <p>&copy; 2021 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2021-06-19)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.7</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

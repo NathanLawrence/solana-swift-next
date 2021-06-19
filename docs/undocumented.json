@@ -8,6 +8,55 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/General/OptionalActor.swift",
+      "line": 16,
+      "symbol": "OptionalActor.locked(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/RPC/RPCNetworkRequestAdaptor.swift",
+      "line": 11,
+      "symbol": "RPCNetworkRequestAdaptor",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/RPC/RPCNetworkRequestAdaptor.swift",
+      "line": 19,
+      "symbol": "RPCNetworkRequestAdaptor.publish(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/RPC/RPCNetworkRequestAdaptor.swift",
+      "line": 55,
+      "symbol": "RPCNetworkRequestError",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/RPC/RPCNetworkRequestAdaptor.swift",
+      "line": 56,
+      "symbol": "RPCNetworkRequestError.requestEncodingError(_:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/RPC/RPCNetworkRequestAdaptor.swift",
+      "line": 57,
+      "symbol": "RPCNetworkRequestError.networkFetchError(_:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/RPC/RPCNetworkRequestAdaptor.swift",
+      "line": 58,
+      "symbol": "RPCNetworkRequestError.responseDecodingError(_:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/RPC/RPCNode.swift",
       "line": 14,
       "symbol": "RPCNode.init(url:)",
@@ -36,10 +85,38 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/RPC/RPCRequestAdaptor.swift",
+      "line": 24,
+      "symbol": "RPCRequestAdaptor.publish(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/RPC/RPCSession.swift",
       "line": 10,
       "symbol": "RPCSession",
       "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/RPC/RPCSession.swift",
+      "line": 11,
+      "symbol": "RPCSession.init(url:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/RPC/RPCSession.swift",
+      "line": 15,
+      "symbol": "RPCSession.requestAdaptor",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/RPC/Requests/Abstract/RPCRequest.swift",
+      "line": 46,
+      "symbol": "SolanaNodeError",
+      "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
@@ -50,9 +127,44 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/RPC/Requests/Abstract/RPCRequestPayload.swift",
+      "line": 27,
+      "symbol": "NoRPCRequestValue",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/RPC/Requests/Abstract/TaggedRPCRequest.swift",
       "line": 40,
       "symbol": "TaggedRPCRequest.init(_:id:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/RPC/Requests/BlockHeightRequest.swift",
+      "line": 10,
+      "symbol": "BlockHeightRequest",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/RPC/Requests/BlockHeightRequest.swift",
+      "line": 11,
+      "symbol": "BlockHeightRequest.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/RPC/Requests/LargestAccountsRequest.swift",
+      "line": 10,
+      "symbol": "LargestAccountsRequest",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/RPC/Requests/LargestAccountsRequest.swift",
+      "line": 17,
+      "symbol": "LargestAccountsRequest.init()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -78,6 +190,13 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/RPC/Responses/Results/GetLargestAccountsResult.swift",
+      "line": 27,
+      "symbol": "GetLargestAccountsResult",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/RPC/Responses/Results/GetMultipleAccountInfoResult.swift",
       "line": 10,
       "symbol": "GetMultipleAccountInfoResult",
@@ -89,6 +208,55 @@
       "line": 12,
       "symbol": "GetProgramAccountsResult",
       "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/Transaction/Instruction.swift",
+      "line": 10,
+      "symbol": "Instruction",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/Transaction/InstructionListBuilder.swift",
+      "line": 10,
+      "symbol": "CompilableInstructionSet",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/Transaction/InstructionListBuilder.swift",
+      "line": 15,
+      "symbol": "InstructionListBuilder",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/Transaction/Transaction.swift",
+      "line": 14,
+      "symbol": "Transaction.Instructions",
+      "symbol_kind": "source.lang.swift.decl.associatedtype",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/Transaction/Transaction.swift",
+      "line": 15,
+      "symbol": "Transaction.instructions",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/WebSocket/URLSession+WebSocketPublisher.swift",
+      "line": 132,
+      "symbol": "WebSocketError",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/WebSocket/URLSession+WebSocketPublisher.swift",
+      "line": 133,
+      "symbol": "WebSocketError.urlSessionError(_:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     }
   ],
