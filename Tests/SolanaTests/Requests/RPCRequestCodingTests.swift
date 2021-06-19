@@ -10,7 +10,6 @@ import XCTest
 
 class RPCRequestCodingTests: XCTestCase {
 
-
     func testSampleRequestCodes() throws {
         struct SampleRequest: RPCRequest, Equatable {
             static let methodName = "sampleRequest"

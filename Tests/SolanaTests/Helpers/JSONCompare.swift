@@ -21,7 +21,6 @@ extension XCTestCase {
             XCTAssertEqual(lhsObject.keys.sorted(),
                            rhsObject.keys.sorted())
 
-
             let lhsString = String(data: lhs, encoding: .utf8)?.replacingOccurrences(of: #"\s"#, with: "", options: [.regularExpression])
             let rhsString = String(data: rhs, encoding: .utf8)?.replacingOccurrences(of: #"\s"#, with: "", options: [.regularExpression])
             XCTAssertEqual(lhsString, rhsString)

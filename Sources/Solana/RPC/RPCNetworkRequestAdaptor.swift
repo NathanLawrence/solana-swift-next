@@ -13,10 +13,10 @@ public class RPCNetworkRequestAdaptor: RPCRequestAdaptor {
         self.task = task
         self.nodeURL = nodeURL
     }
-    
-    var task: URLSessionDataTask? = nil
-    
-    public func publish<Request>(_ request: TaggedRPCRequest<Request>) -> AnyPublisher<TaggedRPCResponse<Request.Response, SolanaNodeError>, Error> where Request : RPCRequest {
+
+    var task: URLSessionDataTask?
+
+    public func publish<Request>(_ request: TaggedRPCRequest<Request>) -> AnyPublisher<TaggedRPCResponse<Request.Response, SolanaNodeError>, Error> where Request: RPCRequest {
         Just(request)
             .encode(encoder: RPC.requestEncoder)
             .mapError { RPCNetworkRequestError.requestEncodingError($0) }
@@ -45,9 +45,7 @@ public class RPCNetworkRequestAdaptor: RPCRequestAdaptor {
             }
             .eraseToAnyPublisher()
     }
-    
-    
-    
+
     let nodeURL: URL
     let urlSession = URLSession(configuration: .default)
 }

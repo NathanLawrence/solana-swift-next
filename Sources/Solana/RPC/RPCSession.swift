@@ -39,7 +39,6 @@ public class RPCSession {
         return requestAdaptor.publish(request)
     }
 
-
     /**
      When Transaction Safe Mode is enabled, the framework will attempt to validate transactions before they are submitted to the chain. If a transaction is potentially dangerous or has inconsistent signatures, the framework will trigger a precondition failure, abort the action, and allow you to investigate the error.
 
