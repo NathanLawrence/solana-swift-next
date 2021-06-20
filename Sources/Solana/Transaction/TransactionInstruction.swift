@@ -13,7 +13,7 @@ import Foundation
  To build an instruction directly as part of a transaction, use `RawTransactionInstruction`.
  */
 public protocol TransactionInstruction: CompilableInstructionSet {
-    var keys: [TransactionKey]  { get }
+    var keys: [TransactionKey] { get }
     var programId: PublicKey { get }
     var data: Data? { get }
 }
