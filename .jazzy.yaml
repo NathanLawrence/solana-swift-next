@@ -18,11 +18,11 @@ custom_categories:
   - name: Building and Sending Transactions
     children:
     - Transaction
-	- TransactionInstruction
-	- RawTransactionInstruction
+    - TransactionInstruction
+    - RawTransactionInstruction
     - CompilableInstructionSet
-	- InstructionListBuilder
-	- TransactionKey
+    - InstructionListBuilder
+    - TransactionKey
   - name: JSON-RPC Requests
     children:
     - RPCRequestKeyedBody
