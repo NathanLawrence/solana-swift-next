@@ -8,10 +8,31 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/General/Base58.swift",
+      "line": 183,
+      "symbol": "Base58Error.invalidLength",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/General/Base58.swift",
+      "line": 184,
+      "symbol": "Base58Error.invalidRepresentation",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/General/OptionalActor.swift",
       "line": 16,
       "symbol": "OptionalActor.locked(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/General/PublicKey.swift",
+      "line": 16,
+      "symbol": "PublicKey.base58",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
@@ -197,13 +218,6 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/Transaction/Instruction.swift",
-      "line": 10,
-      "symbol": "Instruction",
-      "symbol_kind": "source.lang.swift.decl.protocol",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/Transaction/InstructionListBuilder.swift",
       "line": 10,
       "symbol": "CompilableInstructionSet",
@@ -218,6 +232,34 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/Transaction/RawTransactionInstruction.swift",
+      "line": 14,
+      "symbol": "RawTransactionInstruction.init(programId:keys:data:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/Transaction/RawTransactionInstruction.swift",
+      "line": 20,
+      "symbol": "RawTransactionInstruction.keys",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/Transaction/RawTransactionInstruction.swift",
+      "line": 21,
+      "symbol": "RawTransactionInstruction.programId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/Transaction/RawTransactionInstruction.swift",
+      "line": 22,
+      "symbol": "RawTransactionInstruction.data",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/Transaction/Transaction.swift",
       "line": 14,
       "symbol": "Transaction.Instructions",
@@ -228,6 +270,27 @@
       "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/Transaction/Transaction.swift",
       "line": 15,
       "symbol": "Transaction.instructions",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/Transaction/TransactionInstruction.swift",
+      "line": 16,
+      "symbol": "TransactionInstruction.keys",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/Transaction/TransactionInstruction.swift",
+      "line": 17,
+      "symbol": "TransactionInstruction.programId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/nathanlawrence/Developer/solana-swift/Sources/Solana/Transaction/TransactionInstruction.swift",
+      "line": 18,
+      "symbol": "TransactionInstruction.data",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>OptionalActor Class Reference</title>
+    <title>RawTransactionInstruction Structure Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset="utf-8">
@@ -14,9 +14,9 @@
   </head>
   <body>
 
-    <a name="//apple_ref/swift/Class/OptionalActor" class="dashAnchor"></a>
+    <a name="//apple_ref/swift/Struct/RawTransactionInstruction" class="dashAnchor"></a>
 
-    <a title="OptionalActor Class Reference"></a>
+    <a title="RawTransactionInstruction Structure Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -38,7 +38,7 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="../index.html">Solana Reference</a>
       <img class="carat" src="../img/carat.png" />
-      OptionalActor Class Reference
+      RawTransactionInstruction Structure Reference
     </p>
 
     <div class="content-wrapper">
@@ -265,15 +265,15 @@
 
         <section class="section">
           <div class="section-content top-matter">
-            <h1>OptionalActor</h1>
+            <h1>RawTransactionInstruction</h1>
               <div class="declaration">
                 <div class="language">
                   
-                  <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">OptionalActor</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">RawTransactionInstruction</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/TransactionInstruction.html">TransactionInstruction</a></span></code></pre>
 
                 </div>
               </div>
-            <p>A base class that supports Foundation-based locking and unlocking of contents, optionally forcing its method calls into an actor pattern.</p>
+            <p>A <code><a href="../Protocols/TransactionInstruction.html">TransactionInstruction</a></code> implementor that allows the consumer to build instructions ad-hoc within a transaction body without creating custom types.</p>
 
           </div>
         </section>
@@ -285,9 +285,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:6Solana13OptionalActorC6lockedyxxyXElF"></a>
-                    <a name="//apple_ref/swift/Method/locked(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Solana13OptionalActorC6lockedyxxyXElF">locked(_:<wbr>)</a>
+                    <a name="/s:6Solana25RawTransactionInstructionV9programId4keys4dataAcA9PublicKeyV_SayAA0cJ0VG10Foundation4DataVSgtcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(programId:keys:data:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Solana25RawTransactionInstructionV9programId4keys4dataAcA9PublicKeyV_SayAA0cJ0VG10Foundation4DataVSgtcfc">init(programId:<wbr>keys:<wbr>data:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -302,7 +302,88 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">locked</span><span class="o">&lt;</span><span class="kt">Return</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">perform</span><span class="p">:</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Return</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Return</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">programId</span><span class="p">:</span> <span class="kt"><a href="../Structs/PublicKey.html">PublicKey</a></span><span class="p">,</span> <span class="nv">keys</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Building%20and%20Sending%20Transactions.html#/s:6Solana14TransactionKeyV">TransactionKey</a></span><span class="p">],</span> <span class="nv">data</span><span class="p">:</span> <span class="kt">Data</span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Solana25RawTransactionInstructionV4keysSayAA0C3KeyVGvp"></a>
+                    <a name="//apple_ref/swift/Property/keys" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Solana25RawTransactionInstructionV4keysSayAA0C3KeyVGvp">keys</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">keys</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Building%20and%20Sending%20Transactions.html#/s:6Solana14TransactionKeyV">TransactionKey</a></span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Solana25RawTransactionInstructionV9programIdAA9PublicKeyVvp"></a>
+                    <a name="//apple_ref/swift/Property/programId" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Solana25RawTransactionInstructionV9programIdAA9PublicKeyVvp">programId</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">programId</span><span class="p">:</span> <span class="kt"><a href="../Structs/PublicKey.html">PublicKey</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Solana25RawTransactionInstructionV4data10Foundation4DataVSgvp"></a>
+                    <a name="//apple_ref/swift/Property/data" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Solana25RawTransactionInstructionV4data10Foundation4DataVSgvp">data</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">data</span><span class="p">:</span> <span class="kt">Data</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>

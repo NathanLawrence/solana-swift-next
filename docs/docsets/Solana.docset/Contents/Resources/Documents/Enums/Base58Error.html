@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>OptionalActor Class Reference</title>
+    <title>Base58Error Enumeration Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset="utf-8">
@@ -14,9 +14,9 @@
   </head>
   <body>
 
-    <a name="//apple_ref/swift/Class/OptionalActor" class="dashAnchor"></a>
+    <a name="//apple_ref/swift/Enum/Base58Error" class="dashAnchor"></a>
 
-    <a title="OptionalActor Class Reference"></a>
+    <a title="Base58Error Enumeration Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -38,7 +38,7 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="../index.html">Solana Reference</a>
       <img class="carat" src="../img/carat.png" />
-      OptionalActor Class Reference
+      Base58Error Enumeration Reference
     </p>
 
     <div class="content-wrapper">
@@ -265,15 +265,15 @@
 
         <section class="section">
           <div class="section-content top-matter">
-            <h1>OptionalActor</h1>
+            <h1>Base58Error</h1>
               <div class="declaration">
                 <div class="language">
                   
-                  <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">OptionalActor</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">Base58Error</span> <span class="p">:</span> <span class="kt">Error</span></code></pre>
 
                 </div>
               </div>
-            <p>A base class that supports Foundation-based locking and unlocking of contents, optionally forcing its method calls into an actor pattern.</p>
+            <p>The error associated with parsing or using a Base58 data representation.</p>
 
           </div>
         </section>
@@ -285,9 +285,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:6Solana13OptionalActorC6lockedyxxyXElF"></a>
-                    <a name="//apple_ref/swift/Method/locked(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Solana13OptionalActorC6lockedyxxyXElF">locked(_:<wbr>)</a>
+                    <a name="/s:6Solana11Base58ErrorO13invalidLengthyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/invalidLength" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Solana11Base58ErrorO13invalidLengthyA2CmF">invalidLength</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -302,7 +302,34 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">locked</span><span class="o">&lt;</span><span class="kt">Return</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">perform</span><span class="p">:</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Return</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Return</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">invalidLength</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Solana11Base58ErrorO21invalidRepresentationyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/invalidRepresentation" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Solana11Base58ErrorO21invalidRepresentationyA2CmF">invalidRepresentation</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">invalidRepresentation</span></code></pre>
 
                         </div>
                       </div>

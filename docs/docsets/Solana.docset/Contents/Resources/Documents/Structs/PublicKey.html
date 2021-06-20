@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>OptionalActor Class Reference</title>
+    <title>PublicKey Structure Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset="utf-8">
@@ -14,9 +14,9 @@
   </head>
   <body>
 
-    <a name="//apple_ref/swift/Class/OptionalActor" class="dashAnchor"></a>
+    <a name="//apple_ref/swift/Struct/PublicKey" class="dashAnchor"></a>
 
-    <a title="OptionalActor Class Reference"></a>
+    <a title="PublicKey Structure Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -38,7 +38,7 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="../index.html">Solana Reference</a>
       <img class="carat" src="../img/carat.png" />
-      OptionalActor Class Reference
+      PublicKey Structure Reference
     </p>
 
     <div class="content-wrapper">
@@ -265,15 +265,16 @@
 
         <section class="section">
           <div class="section-content top-matter">
-            <h1>OptionalActor</h1>
+            <h1>PublicKey</h1>
               <div class="declaration">
                 <div class="language">
                   
-                  <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">OptionalActor</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">@dynamicMemberLookup</span>
+<span class="kd">public</span> <span class="kd">struct</span> <span class="kt">PublicKey</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
 
                 </div>
               </div>
-            <p>A base class that supports Foundation-based locking and unlocking of contents, optionally forcing its method calls into an actor pattern.</p>
+            <p>A length-enforced public key value represented in base 58.</p>
 
           </div>
         </section>
@@ -285,9 +286,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:6Solana13OptionalActorC6lockedyxxyXElF"></a>
-                    <a name="//apple_ref/swift/Method/locked(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Solana13OptionalActorC6lockedyxxyXElF">locked(_:<wbr>)</a>
+                    <a name="/s:6Solana9PublicKeyV6base58AA6Base58Vvp"></a>
+                    <a name="//apple_ref/swift/Property/base58" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Solana9PublicKeyV6base58AA6Base58Vvp">base58</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -302,7 +303,113 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">locked</span><span class="o">&lt;</span><span class="kt">Return</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">perform</span><span class="p">:</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Return</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Return</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">base58</span><span class="p">:</span> <span class="kt"><a href="../Structs/Base58.html">Base58</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Solana9PublicKeyV12base58StringACSS_tKcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(base58String:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Solana9PublicKeyV12base58StringACSS_tKcfc">init(base58String:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Build a public key from a base-58 string.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">base58String</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Solana9PublicKeyV6base58AcA6Base58V_tKcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(base58:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Solana9PublicKeyV6base58AcA6Base58V_tKcfc">init(base58:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Build a public key from a base-58 object, checking length.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">base58</span><span class="p">:</span> <span class="kt"><a href="../Structs/Base58.html">Base58</a></span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:SE6encode2toys7Encoder_p_tKF"></a>
+                    <a name="//apple_ref/swift/Method/encode(to:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:SE6encode2toys7Encoder_p_tKF">encode(to:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">encode</span><span class="p">(</span><span class="n">to</span> <span class="nv">encoder</span><span class="p">:</span> <span class="kt">Encoder</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Se4fromxs7Decoder_p_tKcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(from:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Se4fromxs7Decoder_p_tKcfc">init(from:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">from</span> <span class="nv">decoder</span><span class="p">:</span> <span class="kt">Decoder</span><span class="p">)</span> <span class="k">throws</span></code></pre>
 
                         </div>
                       </div>

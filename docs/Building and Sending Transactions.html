@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>General Types  Reference</title>
+    <title>Building and Sending Transactions  Reference</title>
     <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="css/highlight.css" />
     <meta charset="utf-8">
@@ -14,9 +14,9 @@
   </head>
   <body>
 
-    <a name="//apple_ref/swift/Section/General Types" class="dashAnchor"></a>
+    <a name="//apple_ref/swift/Section/Building and Sending Transactions" class="dashAnchor"></a>
 
-    <a title="General Types  Reference"></a>
+    <a title="Building and Sending Transactions  Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -38,7 +38,7 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="index.html">Solana Reference</a>
       <img class="carat" src="img/carat.png" />
-      General Types  Reference
+      Building and Sending Transactions  Reference
     </p>
 
     <div class="content-wrapper">
@@ -265,7 +265,7 @@
 
         <section class="section">
           <div class="section-content top-matter">
-            <h1>General Types</h1>
+            <h1>Building and Sending Transactions</h1>
             
           </div>
         </section>
@@ -277,9 +277,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:6Solana4Bytea"></a>
-                    <a name="//apple_ref/swift/Alias/Byte" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Solana4Bytea">Byte</a>
+                    <a name="/s:6Solana11TransactionP"></a>
+                    <a name="//apple_ref/swift/Protocol/Transaction" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Solana11TransactionP">Transaction</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -287,14 +287,15 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A block of 8 bits.</p>
+                        <p>An ordered, atomic set of instructions to be applied on the Solana blockchain, along with basic information on how they should be signed.</p>
 
+                        <a href="Protocols/Transaction.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">Byte</span> <span class="o">=</span> <span class="kt">UInt8</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Transaction</span></code></pre>
 
                         </div>
                       </div>
@@ -304,9 +305,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:6Solana6Base58V"></a>
-                    <a name="//apple_ref/swift/Struct/Base58" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Solana6Base58V">Base58</a>
+                    <a name="/s:6Solana22TransactionInstructionP"></a>
+                    <a name="//apple_ref/swift/Protocol/TransactionInstruction" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Solana22TransactionInstructionP">TransactionInstruction</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -314,15 +315,17 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Data represented as a Base58-encoded string.</p>
+                        <p>An instruction to be delivered as part of a sequenced list for use in a Transaction. Conform to this protocol to deliver a custom instruction.</p>
 
-                        <a href="Structs/Base58.html" class="slightly-smaller">See more</a>
+<p>To build an instruction directly as part of a transaction, use <code><a href="Structs/RawTransactionInstruction.html">RawTransactionInstruction</a></code>.</p>
+
+                        <a href="Protocols/TransactionInstruction.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Base58</span> <span class="p">:</span> <span class="kt">Codable</span><span class="p">,</span> <span class="kt">Hashable</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">TransactionInstruction</span> <span class="p">:</span> <span class="kt"><a href="Building%20and%20Sending%20Transactions.html#/s:6Solana24CompilableInstructionSetP">CompilableInstructionSet</a></span></code></pre>
 
                         </div>
                       </div>
@@ -332,9 +335,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:6Solana3RPCO"></a>
-                    <a name="//apple_ref/swift/Enum/RPC" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Solana3RPCO">RPC</a>
+                    <a name="/s:6Solana25RawTransactionInstructionV"></a>
+                    <a name="//apple_ref/swift/Struct/RawTransactionInstruction" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Solana25RawTransactionInstructionV">RawTransactionInstruction</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -342,14 +345,97 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The namespace for general utilities related to Solana JSON-RPC tasks.</p>
+                        <p>A <code><a href="Protocols/TransactionInstruction.html">TransactionInstruction</a></code> implementor that allows the consumer to build instructions ad-hoc within a transaction body without creating custom types.</p>
+
+                        <a href="Structs/RawTransactionInstruction.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">RawTransactionInstruction</span> <span class="p">:</span> <span class="kt"><a href="Protocols/TransactionInstruction.html">TransactionInstruction</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Solana24CompilableInstructionSetP"></a>
+                    <a name="//apple_ref/swift/Protocol/CompilableInstructionSet" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Solana24CompilableInstructionSetP">CompilableInstructionSet</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">RPC</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">CompilableInstructionSet</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Solana22InstructionListBuilderV"></a>
+                    <a name="//apple_ref/swift/Struct/InstructionListBuilder" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Solana22InstructionListBuilderV">InstructionListBuilder</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@resultBuilder</span>
+<span class="kd">public</span> <span class="kd">struct</span> <span class="kt">InstructionListBuilder</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Solana14TransactionKeyV"></a>
+                    <a name="//apple_ref/swift/Struct/TransactionKey" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Solana14TransactionKeyV">TransactionKey</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A key used to authorize a transaction or instruction.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">TransactionKey</span></code></pre>
 
                         </div>
                       </div>
