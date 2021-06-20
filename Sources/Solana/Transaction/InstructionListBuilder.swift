@@ -14,10 +14,10 @@ public protocol CompilableInstructionSet {
 @resultBuilder
 public struct InstructionListBuilder {
 
-    static func buildBlock(_ components: Instruction...) -> some CompilableInstructionSet {
+    static func buildBlock(_ components: TransactionInstruction...) -> some CompilableInstructionSet {
         Array(components)
     }
 
 }
 
-extension Array: CompilableInstructionSet where Element == Instruction {}
+extension Array: CompilableInstructionSet where Element == TransactionInstruction {}

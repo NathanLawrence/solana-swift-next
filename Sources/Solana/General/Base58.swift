@@ -169,3 +169,11 @@ internal enum Base58Tools {
         return [Byte](res as Data)
     }
 }
+
+/**
+ The error associated with parsing or using a Base58 data representation.
+ */
+public enum Base58Error: Error {
+    case invalidLength
+    case invalidRepresentation
+}

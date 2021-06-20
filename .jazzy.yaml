@@ -15,6 +15,14 @@ custom_categories:
     - RPCRequest
     - TaggedRPCRequest
     - RPCRequestAdaptor
+  - name: Building and Sending Transactions
+    children:
+    - Transaction
+	- TransactionInstruction
+	- RawTransactionInstruction
+    - CompilableInstructionSet
+	- InstructionListBuilder
+	- TransactionKey
   - name: JSON-RPC Requests
     children:
     - RPCRequestKeyedBody
