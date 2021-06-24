@@ -8,7 +8,10 @@
 import Foundation
 
 public protocol CompilableInstructionSet {
-
+    /**
+     An array of all signatures required for an instruction or group of instructions. Used by the SDK to validate transactions in Transaction Safe Mode.
+     */
+    var allSigners: [TransactionKey] { get }
 }
 
 @resultBuilder
@@ -20,4 +23,10 @@ public struct InstructionListBuilder {
 
 }
 
-extension Array: CompilableInstructionSet where Element == TransactionInstruction {}
+extension Array: CompilableInstructionSet where Element == TransactionInstruction {
+    public var allSigners: [TransactionKey] {
+        self.flatMap { instruction in
+            instruction.allSigners
+        }
+    }
+}

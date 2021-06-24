@@ -17,3 +17,9 @@ public protocol TransactionInstruction: CompilableInstructionSet {
     var programId: PublicKey { get }
     var data: Data? { get }
 }
+
+extension TransactionInstruction {
+    public var allSigners: [TransactionKey] {
+        return keys
+    }
+}

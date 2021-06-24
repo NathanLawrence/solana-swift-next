@@ -10,7 +10,7 @@ import Foundation
 /**
  A key used to authorize a transaction or instruction.
  */
-public struct TransactionKey {
+public struct TransactionKey: Hashable, Equatable {
     internal init(publicKey: Base58, isSigner: Bool, isWritable: Bool) {
         self.publicKey = publicKey
         self.isSigner = isSigner
