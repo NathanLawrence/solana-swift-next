@@ -1,2 +1,2 @@
 # solana-swift
- Initial work on the Swift SDK for Solana.
+ An informal green-field workspace to explore Swift API options without concern for backward compatibility.
