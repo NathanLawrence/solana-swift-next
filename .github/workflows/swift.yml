@@ -13,7 +13,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - uses: nathanlawrence/setup-swift@v1.8.0
+    - uses: nathanlawrence/setup-swift
       with:
           swift-version: '99.0'
     - name: Build
