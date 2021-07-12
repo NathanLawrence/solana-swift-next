@@ -13,10 +13,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - uses: fwal/setup-swift@v1
+    - uses: nathanlawrence/setup-swift@v1.8.0
       with:
-          swift-version: '5.4'
+          swift-version: '99.0'
     - name: Build
       run: swift build -v
     - name: Run tests
       run: swift test -v
+    - name: Print version
+      run: swift --version
